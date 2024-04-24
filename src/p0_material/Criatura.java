@@ -1,77 +1,58 @@
 package p0_material;
 
-@SuppressWarnings("rawtypes")
 public class Criatura implements Comparable{
-    // Declaraci√≥ de constants
+    
     public static final int NEN = 10;
     public static final int NENA = 20;
-    public static final int MIN_EDAT=0;
-    public static final int MAX_EDAT=6;
     
-    // Atributs
+    public static final int MIN_EDAT=0;
+    public static final int MAX_EDAT=3;
+    
     private String nom;
     private int edat;
     private int sexe;
-
-    // Constructor amb tots els par√†metres
-    public Criatura(String _nom, int _edat, int _sexe) {
-        if (_edat<MIN_EDAT || _edat>MAX_EDAT)
-            throw new IllegalArgumentException("edat no v√†lida: "+_edat);
-        if (_sexe!=NEN && _sexe!=NENA)
-            throw new IllegalArgumentException("sexe no v√†lid: "+_sexe);  
-        this.nom = _nom;
-        this.edat = _edat;
-        this.sexe = _sexe;
+    
+    public Criatura(String nom, int edat, int sexe) {
+        if (edat<MIN_EDAT || edat>MAX_EDAT)
+            throw new IllegalArgumentException("edat no v‡lida: "+edat);
+        if (sexe!=NEN && sexe!=NENA)
+            throw new IllegalArgumentException("sexe no v‡lid: "+sexe);
+        
+        this.nom = nom;
+        this.edat = edat;
+        this.sexe = sexe;
     }
     
-    // Setters i Getters
-    public String getNom() {
-        return this.nom;
-    }
+    public String getNom() {return this.nom;}
+    public int getEdat() {return this.edat;}
+    public int getSexe() {return this.sexe;}
     
-    public int getEdat() {
-        return this.edat;
-    }
-    
-    public int getSexe() {
-        return this.sexe;
-    }
-
-    public void setNom(String _nom) {
-        this.nom = _nom;
-    }
-
-    public void setEdat(int _edat) {
-        this.edat = _edat;
-    }
-
-    public void setSexe(int _sexe) {
-        this.sexe = _sexe;
-    }
-  
-    // Redefinici√≥ del m√®tode toString heretat d'Object
+    // redefiniciÛ del mËtode toString heretat d'Object'
     public String toString () {
         String resultat;
-        resultat = "Criatura de nom: " + this.nom + ", t√© " + this.edat + " anys. ";
-        return resultat += (sexe == NEN) ? "Sexe: nen": "Sexe: nena";
+        resultat = "Criatura de nom: "+nom+", tÈ "+edat+" anys. ";
+        if (sexe==NEN) resultat = resultat+"Sexe: nen";
+        else resultat = resultat +"Sexe: nena";
+        return resultat;
     }
     
-    // Implementaci√≥ de la interf√≠cie Comparable
-    public int compareTo(Object objecteAComparar) {
-        // comparaci√≥ basada en l'ordre lexicogr√†fic
-        // sense distingir maj√∫scules de min√∫scules.
-        Criatura unaAltraCriatura = (Criatura) objecteAComparar;
-        return this.nom.compareToIgnoreCase(unaAltraCriatura.nom);
+    // implementaciÛ de la interfÌcie Comparable
+    public int compareTo(Object o) {
+        // comparaciÛ basada en l'ordre lexicogr‡fic sense distingir maj˙sucules 
+        // de min˙scules.
+        Criatura altra = (Criatura)o;
+        return this.nom.compareToIgnoreCase(altra.nom);
     }
     
-    // Redefinici√≥ del m√®tode equals heretat d'object.
-    public boolean equals(Object objecteAComparar) {
-        // redefinici√≥ compatible amb compareTo
+    // redefiniciÛ del mËtode equals heretat d'object.
+    public boolean equals (Object o) {
+        // redefiniciÛ compatible amb compareTo
         try {
-            return (this.compareTo(objecteAComparar) == 0);
+            return this.compareTo(o)==0;
         }
-        catch(ClassCastException excepcio) {
+        catch(ClassCastException e) {
             return false;
         }
     }
+    
 }
