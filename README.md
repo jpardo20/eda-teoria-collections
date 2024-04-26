@@ -1,3 +1,4 @@
+
 # Estructures de  Dades i Algorismes
 
 # Exercicis sobre  “col·leccions” 
