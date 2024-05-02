@@ -1,26 +1,25 @@
-package ex_02;
+package classes;
 
-import p0_material.*;
 import java.util.*;
 
 public class MainaderiaList implements Mainaderia {
 
-    // Referencia a objecte de la classe List on "guardarem" les criatures...
+    // Refer√®ncia a objecte de la classe List on "guardarem" les criatures...
     private List contingut;
     
     public MainaderiaList() {
-        // crear la llista. Inicialment ser‡ buida, clar...
+        // Crear la llista. Inicialment ser√† buida, √©s clar...
         this.contingut = new ArrayList();
     }
  
-   // afegeix una criatura. ExcepciÛ si ja hi ha una criatura igual
+   // Afegeix una criatura. Excepci√≥ si ja hi ha una criatura igual
     public void matricular (Criatura c) throws IllegalArgumentException {
         if (this.contingut.contains(c))
             throw new IllegalArgumentException("matricular: criatura repetida");
         contingut.add(c);
     }
     
-    // desmatricula la criatura de nom donat. Retorna la criatura que 
+    // Desmatricula la criatura de nom donat. Retorna la criatura que 
     // es desmatricula. Si no n'hi ha cap amb aquell nom retorna null
     public Criatura desMatricular(String nom) {
         Criatura target = new Criatura(nom, Criatura.MIN_EDAT, Criatura.NEN);
@@ -33,7 +32,7 @@ public class MainaderiaList implements Mainaderia {
         }
     }
     
-    // Retorna la criatura que tÈ el nom especificat. Retorna null si no
+    // Retorna la criatura que t√© el nom especificat. Retorna null si no
     // n'hi ha cap
     public Criatura buscar(String nom) {
         Criatura target = new Criatura(nom, Criatura.MIN_EDAT, Criatura.NEN);
@@ -46,29 +45,30 @@ public class MainaderiaList implements Mainaderia {
         }
     }
     
-    // retorna el n˙mero de criatures matriculades
+    // retorna el n√∫mero de criatures matriculades
     public int numCriatures() {
         return contingut.size();
     }
     
-    // retorna el n˙mero de criatures del sexe especificat com a par‡metre
+    // retorna el nombre de criatures del sexe especificat com a par√†metre
     public int quantsSexe (int sexe) {
         
-        /* Exercici: a la versiÛ mostrada a classe de la implementaciÛ
-           d'aquest mËtode, la iteraciÛ sobre el contingut no es feia
-           utilitzant l'iterador de la col∑lecciÛ.
-           Torneu a escriure el codi d'aquest mËtode perÚ ara fent ˙s 
-           de l'iterador proporcionat pel mËtode iterator.
+        /* Exercici: a la versi√≥ mostrada a classe de la implementaci√≥
+           d'aquest m√®tode, la iteraci√≥ sobre el contingut no es feia
+           utilitzant l'iterador de la col¬∑lecci√≥.
+           Torneu a escriure el codi d'aquest m√®tode, per√≤ ara fent √©s
+           de l'iterador proporcionat pel m√®tode iterator.
          
-           DesprÈs, podeu executar ProvaMainaderia per veure si el resultat
-           que obteniu Ès el mateix que s'obtenia abans */
+           Despr√©s, podeu executar ProvaMainaderia per veure si el resultat
+           que obteniu √©s el mateix que s'obtenia abans */
+        return -1;
     }
     
-    // retorna la i-Ëssima criatura. ExcepciÛ si el par‡metre est‡ fora
-    // dels lÌmits actuals
+    // Retorna la i-√®ssima criatura. Excepci√≥ si el par√†metre est√† fora
+    // dels l√≠mits actuals
     public Criatura get(int i) throws IndexOutOfBoundsException {
         return (Criatura)contingut.get(i);
-        // NOTA: get ja llenÁa IndexOutOfBoundsException si el par‡metre est‡
+        // NOTA: get ja llen√ßa IndexOutOfBoundsException si el par√†metre est√†
         // fora de limits
     }
 

@@ -1,11 +1,11 @@
-package ex_05;
+package exercicis;
 
 import Keyboard.*;
 import java.util.*;
 
-public class PexProva {
+public class Exercici_05_PexProva {
 
-  // opcions del menú que es presentarà a l'usuari del programet
+  // opcions del menÃº que es presentarÃ  a l'usuari del programet
   private static final int FINAL = 0;
   private static final int BUSCAR = 1;
   private static final int AFEGIR= 2;
@@ -16,13 +16,13 @@ public class PexProva {
 
   public static void main (String [] args) {
 
-    int opcio; // opció del menúi triada
+    int opcio; // opciÃ³ del menÃº i triada
 
     // crear el diccionari
     elMeuDiccionari = new DiccioAmbMap();
 
 
-    // iterar mentre l'opció seleccionada no sigui la d'abandonar el programa
+    // iterar mentre l'opciÃ³ seleccionada no sigui la d'abandonar el programa
     opcio = menu();
     while (opcio!=FINAL)  {
       // processar l'opcio seleccionada
@@ -36,21 +36,21 @@ public class PexProva {
     }
   } // final de main
 
-  // procediment que presenta el menú i llegeix (i retorna) l'opció escollida
+  // procediment que presenta el menÃº i llegeix (i retorna) l'opciÃ³ escollida
   private static int menu ()  {
 
     System.out.println("(0) FINALITZAR");
-    System.out.println("(1) BUSCAR ELS SINÒNIMS D'UNA PARAULA");
-    System.out.println("(2) AFEGIR UN SINÒNIM A UNA PARAULA");
+    System.out.println("(1) BUSCAR ELS SINÃ’NIMS D'UNA PARAULA");
+    System.out.println("(2) AFEGIR UN SINÃ’NIM A UNA PARAULA");
     System.out.println("(3) AFEGIR UN CONJUNT DE SINONIMS A UNA PARAULA");
     System.out.println("(4) LLISTAR TOTES LES PARAULES");
     System.out.println();
 
-    // iterar mentre l'opció no sigui una de les permeses
-    String cadOpcio; // l'opció, tal i com la llegim
-    int opcio; // l'opció convertida en un número
+    // iterar mentre l'opciÃ³ no sigui una de les permeses
+    String cadOpcio; // l'opciÃ³, tal com la llegim
+    int opcio; // l'opciÃ³ convertida en un nÃºmero
     do {
-      System.out.print("opció? ");
+      System.out.print("opciÃ³? ");
       cadOpcio = Keyboard.readString();
       try {
         opcio = Integer.parseInt(cadOpcio);
@@ -100,15 +100,15 @@ public class PexProva {
     // demanar la paraula
     System.out.print("Paraula: ");
     paraula = Keyboard.readString();
-    // demanar el sinònim
+    // demanar el sinï¿½nim
     System.out.print("Sinonim: ");
     sinonim = Keyboard.readString();
 
     // afegir i dir com ha anat
     if (elMeuDiccionari.afegir(paraula, sinonim))
-        System.out.println("  Sinònim afegit");
+        System.out.println("  Sinï¿½nim afegit");
     else
-        System.out.println("  Sinònim NO afegit. Possible repetició");
+        System.out.println("  Sinï¿½nim NO afegit. Possible repeticiï¿½");
 
 
     premerPerContinuar();
@@ -122,7 +122,7 @@ public class PexProva {
     // demanar la paraula
     System.out.print("Paraula: ");
     paraula = Keyboard.readString();
-    // demanar tots els sinònim
+    // demanar tots els sinï¿½nim
     System.out.print("Sinonims (separats per espai(s)): ");
     sinonims = Keyboard.readString();
 
@@ -134,9 +134,9 @@ public class PexProva {
 
     // afegir i dir com ha anat
     if (elMeuDiccionari.afegir(paraula, cjtSinonims))
-        System.out.println("  Sinònims afegit");
+        System.out.println("  Sinï¿½nims afegit");
     else
-        System.out.println("  Sinònims NO afegits. Possible repetició");
+        System.out.println("  Sinï¿½nims NO afegits. Possible repeticiï¿½");
 
     premerPerContinuar();
   }
@@ -149,7 +149,7 @@ public class PexProva {
 
     if (paraules.length==0) {
       // una taula de mida zero indica que la paraula no es coneix
-      System.out.println("El diccionari és buit");
+      System.out.println("El diccionari ï¿½s buit");
     }
     else {
       // iterar sobre la taula i anar escribint les paraules

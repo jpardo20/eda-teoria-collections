@@ -1,8 +1,6 @@
-package ex00;
+package exercicis;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import p0_material.Element;
+import classes.Element;
 
 public class Exercici_00 {
     public static void main(String[] args) {

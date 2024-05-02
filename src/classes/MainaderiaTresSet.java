@@ -1,12 +1,11 @@
-package ex_04;
+package classes;
 
-import p0_material.Criatura;
 import java.util.*;
 
-/* implementació de la interficie MainaderiaTres basada en Set */
+/* implementaciï¿½ de la interficie MainaderiaTres basada en Set */
 public class MainaderiaTresSet implements MainaderiaTres, Iterable<Criatura>{
 
-    private Set<Criatura> infrastructura; //Conjunt que farà, com el seu nom
+    private Set<Criatura> infrastructura; //Conjunt que farï¿½, com el seu nom
     //indica, d'infrastructura per a guardar les criatures
     
     public MainaderiaTresSet() {
@@ -15,10 +14,10 @@ public class MainaderiaTresSet implements MainaderiaTres, Iterable<Criatura>{
         
     }
 
-    /* CAL IMPLEMENTAR TOTS ELS MÈTODES DEFINITS A LA INTERFICIE */
+    /* CAL IMPLEMENTAR TOTS ELS Mï¿½TODES DEFINITS A LA INTERFICIE */
     // Excepte iterator que ja el teniu implementat de regal
 
-    /* retorna un iterador que permet recórrer la mainaderia */
+    /* retorna un iterador que permet recï¿½rrer la mainaderia */
     public Iterator<Criatura> iterator() {
         return infrastructura.iterator();
     }

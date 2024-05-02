@@ -1,12 +1,11 @@
-package ex_03;
+package classes;
 
-import p0_material.Criatura;
 import java.util.*;
 
-/* implementació de la interficie MainaderiaDos basada en List */
+/* implementaciï¿½ de la interficie MainaderiaDos basada en List */
 public class MainaderiaDosList implements MainaderiaDos{
 
-    private List infrastructura; //llista que farà, com el seu nom 
+    private List infrastructura; //llista que farï¿½, com el seu nom 
     //indica, d'infrastructura per a guardar les criatures
     
     public MainaderiaDosList() {
@@ -14,6 +13,6 @@ public class MainaderiaDosList implements MainaderiaDos{
         /* ENCARA S'HA DE COMPLETAR */
     }
     
-    /* CAL IMPLEMENTAR TOTS ELS MÈTODES DEFINITS A LA INTERFICIE */
+    /* CAL IMPLEMENTAR TOTS ELS Mï¿½TODES DEFINITS A LA INTERFICIE */
     
 }

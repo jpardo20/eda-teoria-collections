@@ -1,9 +1,9 @@
-package ex_01;
+package exercicis;
 
-import p0_material.Criatura;
+import classes.Criatura;
 import java.util.*;
 
-public class Apartat_C {
+public class Exercici_01_apartat_C {
 
 public static void main (String [] args) {
         
@@ -12,7 +12,7 @@ public static void main (String [] args) {
                  new Criatura("EVA",1, Criatura.NENA),
                  new Criatura("CARLES",0, Criatura.NEN),
                  new Criatura("ONA",1, Criatura.NENA),
-                 new Criatura("DÕDAC",0, Criatura.NEN),
+                 new Criatura("D√çDAC",0, Criatura.NEN),
                  new Criatura("NIL",1, Criatura.NEN),
                  new Criatura("EVA",3, Criatura.NENA),
                  new Criatura("JORDI",2, Criatura.NEN),
@@ -23,25 +23,25 @@ public static void main (String [] args) {
         Collection llarInfants;
         llarInfants = new LinkedList();
         
-        // afegim totes les criatures, desprÈs de "barrejar" una mica
+        // afegim totes les criatures, despr√©s de "barrejar" una mica
         shuffle(poblacio);
         for (int i=0; i<poblacio.length; i++) {
             llarInfants.add(poblacio[i]);
         }
         
         /* APARTAT C: eliminar tots els nens -les nenes no- de la 
-           Col∑lecciÛ llarInfants. Feu-ho obtenint l'iterador
-           de la col∑lecciÛ i fent amb ell tota la feina. Si us cal,
-           documenteu-vos sobre el mËtode iterator (de Collection) i sobre el
-           darrer mËtode de la interfÌcie Iterator. */
+           Col¬∑lecci√≥ llarInfants. Feu-ho obtenint l'iterador
+           de la col¬∑lecci√≥ i fent amb ell tota la feina. Si us cal,
+           documenteu-vos sobre el m√®tode iterator (de Collection) i sobre el
+           darrer m√®tode de la interf√≠cie Iterator. */
         
-        /* ... Poseu aquÌ la vostra soluciÛ */
+        /* ... Poseu aqu√≠ la vostra soluci√≥ */
         
         
         
-        // I finalment veiem quË hi ha...
+        // I finalment veiem qu√® hi ha...
         System.out.println();
-        System.out.println("contingut de la llista desprÈs de treure els nens");
+        System.out.println("contingut de la llista despr√©s de treure els nens");
         System.out.println("-------------------------------------------------");
         Object [] contingut = llarInfants.toArray();
         for (int i=0; i<contingut.length;i++) {

@@ -60,9 +60,7 @@ Trobareu aquest exercici en el **paquet `ex00`**. S’utilitza la **classe `Elem
 ```java
 package ex00;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import p0_material.Element;
+import classes.Element;
 
 public class Exercici_00 {
     public static void main(String[] args) {
@@ -83,7 +81,7 @@ public class Exercici_00 {
                 new Element("Gamma", 10),
                 new Element("Tau", 18),
                 new Element("Alpha", 40),
-                new Element("Ro", 23) };
+                new Element("Ro", 23)};
 
         // Crear una primera col·lecció que contingui tots els elements de les posicions
         // parelles de la taula unsElement.

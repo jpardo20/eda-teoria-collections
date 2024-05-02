@@ -1,28 +1,28 @@
-package ex_03;
+package exercicis;
 
-import p0_material.Criatura;
+import classes.Criatura;
 
-public class ProvaImplementacio {
+public class Exercici_03_ProvaImplementacio {
     public static void main (String [] args) {
         Criatura [] poblacio = {
             new Criatura("NIL",0,Criatura.NEN),
             new Criatura("PERE",1, Criatura.NEN),
             new Criatura("NEUS",0, Criatura.NENA),
             new Criatura("ONA",1, Criatura.NENA),
-            new Criatura("DÍDAC",0, Criatura.NEN),
+            new Criatura("Dï¿½DAC",0, Criatura.NEN),
             new Criatura("MARIONA",1, Criatura.NENA),
             new Criatura("EVA",3, Criatura.NENA),
             new Criatura("FIONA",2, Criatura.NENA),
             new Criatura("ENIA",3, Criatura.NENA)
-        }; // dades per la prova. Evidentment se'n poden afegir més
+        }; // dades per la prova. Evidentment se'n poden afegir mï¿½s
         
         MainaderiaDosList mainaderia; // la mainaderia que es vol provar
         boolean matriculat;
-        /* SI CALEN MÉS VARIABLES ES PODEN DECLARAR AQUÍ */
+        /* SI CALEN Mï¿½S VARIABLES ES PODEN DECLARAR AQUï¿½ */
         
         mainaderia = new MainaderiaDosList(); // creacio
         
-        //càrrega
+        //cï¿½rrega
         for (int i=0; i<poblacio.length; i++) {
             matriculat=mainaderia.matricular(poblacio[i].getNom(),
                                              poblacio[i].getEdat(),

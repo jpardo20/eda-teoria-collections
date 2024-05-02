@@ -1,28 +1,28 @@
-package p0_material;
+package classes;
 
 
 
 public interface Mainaderia {
     
-    // afegeix una criatura. Excepció si ja hi ha una criatura igual
+    // afegeix una criatura. Excepciï¿½ si ja hi ha una criatura igual
     public void matricular (Criatura c) throws IllegalArgumentException;
     
     // desmatricula la criatura de nom donat. Retorna la criatura que 
     // es desmatricula. Si no n'hi ha cap amb aquell nom retorna null
     public Criatura desMatricular(String nom);
     
-    // Retorna la criatura que té el nom especificat. Retorna null si no
+    // Retorna la criatura que tï¿½ el nom especificat. Retorna null si no
     // n'hi ha cap
     public Criatura buscar(String nom);
     
-    // retorna el número de criatures matriculades
+    // retorna el nï¿½mero de criatures matriculades
     public int numCriatures();
     
-    // retorna el número de criatures del sexe especificat com a paràmetre
+    // retorna el nï¿½mero de criatures del sexe especificat com a parï¿½metre
     public int quantsSexe (int sexe);
     
-    // retorna la i-èssima criatura. Excepció si el paràmetre està fora
-    // dels límits actuals
+    // retorna la i-ï¿½ssima criatura. Excepciï¿½ si el parï¿½metre estï¿½ fora
+    // dels lï¿½mits actuals
     public Criatura get(int i) throws IndexOutOfBoundsException;
         
 }

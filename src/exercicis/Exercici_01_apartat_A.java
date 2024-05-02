@@ -1,9 +1,9 @@
-package ex01;
+package exercicis;
 
-import p0_material.Criatura;
+import classes.Criatura;
 import java.util.*;
 
-public class Apartat_A {
+public class Exercici_01_apartat_A {
 
 public static void main (String [] args) {
         

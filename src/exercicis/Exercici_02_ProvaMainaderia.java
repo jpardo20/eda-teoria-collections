@@ -1,13 +1,15 @@
-/* aquest programa de prova té molt poc valor per a determinar la
- * presencia d'errors en la implementació de la intefície Mainaderia.
- * Més que com una prova es pot entendre com un exemple d'ús de les
- * classes que puguin implementar la interfície */
+/* aquest programa de prova tï¿½ molt poc valor per a determinar la
+ * presencia d'errors en la implementaciï¿½ de la intefï¿½cie Mainaderia.
+ * Mï¿½s que com una prova es pot entendre com un exemple d'ï¿½s de les
+ * classes que puguin implementar la interfï¿½cie */
 
-package ex_02;
+package exercicis;
 
-import p0_material.*;
+import classes.Criatura;
+import classes.Mainaderia;
+import classes.MainaderiaList;
 
-public class ProvaMainaderia {
+public class Exercici_02_ProvaMainaderia {
 	
     public static void main (String [] args) {
         Criatura [] poblacio = {
@@ -15,7 +17,7 @@ public class ProvaMainaderia {
             new Criatura("PERE",1, Criatura.NEN),
             new Criatura("NEUS",0, Criatura.NENA),
             new Criatura("ONA",1, Criatura.NENA),
-            new Criatura("DÍDAC",0, Criatura.NEN),
+            new Criatura("Dï¿½DAC",0, Criatura.NEN),
             new Criatura("MARIONA",1, Criatura.NENA),
             new Criatura("EVA",3, Criatura.NENA),
             new Criatura("FIONA",2, Criatura.NENA),
