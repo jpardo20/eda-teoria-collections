@@ -3,7 +3,7 @@ package classes;
 import java.util.*;
 
 /* implementaci� de la interficie MainaderiaTres basada en Set */
-public class MainaderiaTresSet implements MainaderiaTres, Iterable<Criatura>{
+public class MainaderiaTresSet { // implements MainaderiaTres, Iterable<Criatura>{
 
     private Set<Criatura> infrastructura; //Conjunt que far�, com el seu nom
     //indica, d'infrastructura per a guardar les criatures

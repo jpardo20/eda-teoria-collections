@@ -1,7 +1,5 @@
 package classes;
 
-
-
 public interface Mainaderia {
     
     // afegeix una criatura. Excepci� si ja hi ha una criatura igual

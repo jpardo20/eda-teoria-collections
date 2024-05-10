@@ -1,4 +1,4 @@
-package exemples. p01_exempleCollection;
+package exemples.p01_exempleCollection;
 
 import java.util.ArrayList;
 import java.util.Collection;

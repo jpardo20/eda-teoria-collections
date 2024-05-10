@@ -21,7 +21,7 @@ public class DiccioAmbMap implements DiccionariSinonims {
         String sMaj = sinonim.toUpperCase();
         // si la paraula pMaj existeix, en recuperem el conjunt de
         // sinònims i provem d'afegir-hi el que ens han donat sMaj
-        if (/* COMPLETAR: pMaj és una clau a la infrastructura? */) {
+        if (true) { // (/* COMPLETAR: pMaj és una clau a la infrastructura? */) {
             Set<String> sinonims = null;
             /* COMPLETAR: recupetar els sinònims */
             /* COMPLETAR: afegir sMaj als sinònims i retornar */
@@ -33,6 +33,7 @@ public class DiccioAmbMap implements DiccionariSinonims {
             /* COMPLETAR: vincular pMaj amb nou */
             return nou.add(sMaj);
         }
+        return false;
     }
 
     public boolean afegir(String paraula, Set<String> sinonims) {
@@ -40,7 +41,7 @@ public class DiccioAmbMap implements DiccionariSinonims {
         // Una iteració for-each sobre el segon paràmetre us serà ùtil.
         // Recordeu que la paraula (primer paràmetre) pot ser nova o no.
         /* COMPLETAR */
-       
+       return false;
     }
 
     public String[] recuperar(String paraula) {
@@ -63,8 +64,9 @@ public class DiccioAmbMap implements DiccionariSinonims {
     public String[] paraulesConegudes() {
         /* COMPLETAR: declarar la variable paraules de tal manera que pugui
          * referenciar un conjunt de claus -Strings- */
-        
-        String [] resultat;
+        int paraules;
+
+        String [] resultat = null;
         paraules = 0;
         /* COMPLETAR: recuperar el conjunt de claus */
         /* COMPLETAR: crear la taula resultat i omplir-la amb el contingut

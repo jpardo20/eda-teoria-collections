@@ -1,6 +1,6 @@
 package exemples.p03_exemplesList_02;
 
-import p02_exemplesList_01.Criatura;
+import exemples.p02_exemplesList_01.Criatura;
 
 public interface Mainaderia {
     

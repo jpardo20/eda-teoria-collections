@@ -1,10 +1,10 @@
-package p04_exempleIterator;
+package exemples.p04_exempleIterator;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-import p02_exemplesList_01.Criatura;
+import exemples.p02_exemplesList_01.Criatura;
 
 
 public class ExempleIteracio {
@@ -19,7 +19,7 @@ public class ExempleIteracio {
 		
 		nens.add(new Criatura("NIL",0,Criatura.NEN));
 		nens.add(new Criatura("PERE",1, Criatura.NEN));
-		nens.add(new Criatura("DÍDAC",0, Criatura.NEN));
+		nens.add(new Criatura("Dï¿½DAC",0, Criatura.NEN));
 		nens.add(new Criatura("NIL",1, Criatura.NEN));
 		nens.add(new Criatura("VICTOR", 2, Criatura.NEN));
 		nens.add(new Criatura("PAU", 3, Criatura.NEN));
@@ -54,7 +54,7 @@ public class ExempleIteracio {
 			sumaEdats = sumaEdats+criatura.getEdat();
 		}
 		edatMitja = sumaEdats/llarInfants.size();
-		System.out.println("L'edat mitja és: "+edatMitja);
+		System.out.println("L'edat mitja ï¿½s: "+edatMitja);
 		
 		// -----------------------------------
 		// buscar una nena de tres anys

@@ -14,9 +14,9 @@ public class Criatura implements Comparable{
     
     public Criatura(String nom, int edat, int sexe) {
         if (edat<MIN_EDAT || edat>MAX_EDAT)
-            throw new IllegalArgumentException("edat no v�lida: "+edat);
+            throw new IllegalArgumentException("edat no vàlida: "+edat);
         if (sexe!=NEN && sexe!=NENA)
-            throw new IllegalArgumentException("sexe no v�lid: "+sexe);
+            throw new IllegalArgumentException("sexe no vàlid: "+sexe);
         
         this.nom = nom;
         this.edat = edat;
@@ -27,26 +27,26 @@ public class Criatura implements Comparable{
     public int getEdat() {return this.edat;}
     public int getSexe() {return this.sexe;}
     
-    // redefinici� del m�tode toString heretat d'Object'
+    // Redefinició del mètode toString heretat d'Object'
     public String toString () {
         String resultat;
-        resultat = "Criatura de nom: "+nom+", t� "+edat+" anys. ";
-        if (sexe==NEN) resultat = resultat+"Sexe: nen";
-        else resultat = resultat +"Sexe: nena";
+        resultat = "Criatura de nom: " + this.nom + "," +
+                " té " + this.edat + " anys. ";
+        resultat += (this.sexe==NEN)? "Sexe: nen": "Sexe: nena";
         return resultat;
     }
     
-    // implementaci� de la interf�cie Comparable
+    // Implementació de la interfècie Comparable
     public int compareTo(Object o) {
-        // comparaci� basada en l'ordre lexicogr�fic sense distingir maj�sucules 
-        // de min�scules.
+        // Comparació basada en l'ordre lexicogràfic sense distingir majúscules 
+        // de minúscules.
         Criatura altra = (Criatura)o;
         return this.nom.compareToIgnoreCase(altra.nom);
     }
     
-    // redefinici� del m�tode equals heretat d'object.
+    // redefinició del mètode equals heretat d'object.
     public boolean equals (Object o) {
-        // redefinici� compatible amb compareTo
+        // redefinició compatible amb compareTo
         try {
             return this.compareTo(o)==0;
         }
