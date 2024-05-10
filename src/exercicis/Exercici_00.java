@@ -4,7 +4,6 @@ import classes.Element;
 
 public class Exercici_00 {
     public static void main(String[] args) {
-
         Element[] unsElements = {
                 new Element("Alpha", 40),
                 new Element("Omega", 20),
@@ -23,28 +22,23 @@ public class Exercici_00 {
                 new Element("Alpha", 40),
                 new Element("Ro", 23) };
 
-        // Crear una primera col·lecció que contingui tots els elements de les posicions
-        // parelles de la taula unsElement.
+        // Crear una primera col·lecció que contingui tots
+        // els elements de les posicions parelles de la taula unsElements.
         /* COMPLETE */
 
-
-        // Crear una segona col·lecció que contingui tots els elements de la taula
-        // unsElements que s'anomenen "Alpha" o "Omega"
+        // Crear una segona col·lecció que contingui tots els elements
+        // de la taula unsElements que s'anomenen "Alpha" o "Omega"
         /* COMPLETE */
 
-
-        // A la segona col·lecció afegir-hi l'element de la posició (índex) 3 de la
-        // taula
+        // A la segona col·lecció afegir-hi l'element de
+        // la posició (índex) 3 de la taula
         /* COMPLETE */
-
 
         // De la primera col·lecció eliminar els elements que són com els de la segona
         /* COMPLETE */
 
-
-        // Obtenir una taula amb tots els elements de la primera col·lecció. Mostrar-ne
-        // el contingut
+        // Obtenir una taula amb tots els elements de la primera col·lecció.
+        //  Mostrar-ne el contingut.
         /* COMPLETE */
-
     }
 }

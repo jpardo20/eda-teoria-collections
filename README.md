@@ -11,45 +11,49 @@ Ens basarem en aquestes classes per fer els següents exercicis:
 
 ```java
 public class Element {
-    private String name;
-    private int value;
-    // Constructor
-    public Element (String name, int value) {
-        this.name = name;
-        this.value = value;
-    }
-    // setters & getter
-    public String getName() {
-        return this.name;
-    }
+	// Atributs
+	private String name;
+	private int value;
 
-    public int getValue() {
-        return this.value;
-    }
-
-    public void setValue(int newVal) {
-        this.value=newVal;
-    }
-
-    // equality (overriding of superclass equals)
-    public boolean equals (Object o) {
-        Element other;
-        try {
-            other = (Element)o;
-            return this.name.equals(other.name);
-        }
-        catch(Exception e) {
-            return false;
-        }
-    }
-    // toString (overriding of superclass toString)
-    public String toString () {
-        return "Element["+name+" "+value+"]";
-    }
+	// Constructor
+	public Element (String name, int value) {
+		this.name = name;
+		this.value = value;
+	}
+	
+	// Setters & Getters
+	public String getName() {return this.name;}
+	public int getValue() {return this.value;}
+	public void setValue(int newVal) {this.value=newVal;} 
+	
+	// Mètode equality (overriding of superclass equals)
+	public boolean equals (Object o) {
+		Element other;
+		try {
+			other = (Element)o;
+			return this.name.equals(other.name);
+		}
+		catch(Exception e) {
+			return false;
+		}
+	}
+	
+	// Mètode toString (overriding of superclass toString)
+	public String toString () {
+		return "Element["+name+" "+value+"]";
+	}
+	
+	// Mètode hashCode (overriding of superclass hashCode)
+	public int hashCode() {
+		return this.name.hashCode();
+	}
 }
 ```
 
-Podeu trobar el codi al fitxer [**`Element.java`**](./src/p0_material/Element.java).
+Podeu trobar el codi al fitxer [**`Element.java`**](src/exemples/p01_exempleCollection/Element.java).
+
+[ClasseElement](img/eda-04-ClasseElement.png)
+
 
 ## Familiaritzar-se amb **`Collection`**
 
@@ -58,13 +62,8 @@ Trobareu aquest exercici en el **paquet `ex00`**. S’utilitza la **classe `Elem
 ### Heu de completar els punts que s’indica per tal de realitzar les accions que s’especifiquen.
 
 ```java
-package ex00;
-
-import classes.Element;
-
 public class Exercici_00 {
     public static void main(String[] args) {
-
         Element[] unsElements = {
                 new Element("Alpha", 40),
                 new Element("Omega", 20),
@@ -81,35 +80,31 @@ public class Exercici_00 {
                 new Element("Gamma", 10),
                 new Element("Tau", 18),
                 new Element("Alpha", 40),
-                new Element("Ro", 23)};
+                new Element("Ro", 23) };
 
-        // Crear una primera col·lecció que contingui tots els elements de les posicions
-        // parelles de la taula unsElement.
+        // Crear una primera col·lecció que contingui tots
+        // els elements de les posicions parelles de la taula unsElements.
         /* COMPLETE */
 
-
-        // Crear una segona col·lecció que contingui tots els elements de la taula
-        // unsElements que s'anomenen "Alpha" o "Omega"
+        // Crear una segona col·lecció que contingui tots els elements
+        // de la taula unsElements que s'anomenen "Alpha" o "Omega"
         /* COMPLETE */
 
-
-        // A la segona col·lecció afegir-hi l'element de la posició (índex) 3 de la
-        // taula
+        // A la segona col·lecció afegir-hi l'element de  
+        // la posició (índex) 3 de la taula
         /* COMPLETE */
-
 
         // De la primera col·lecció eliminar els elements que són com els de la segona
         /* COMPLETE */
 
-
-        // Obtenir una taula amb tots els elements de la primera col·lecció. Mostrar-ne
-        // el contingut
+        // Obtenir una taula amb tots els elements de la primera col·lecció.
+        //  Mostrar-ne el contingut.
         /* COMPLETE */
-
     }
 }
 ```
 
+Podeu trobar el fitxer [**`Exercici_00.java`**](exercicis/Exercici_00.java).
 
 
 ```java

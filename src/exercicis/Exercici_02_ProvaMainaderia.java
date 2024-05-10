@@ -38,16 +38,16 @@ public class Exercici_02_ProvaMainaderia {
         //ens interessem per quants matriculats hi ha
         System.out.println();
         System.out.print("En aquest moment tenim " +
-                aparcaNens.numCriatures());
+                aparcaNens.quantitatDeCriatures());
         System.out.print(" criatures, de les quals " +
-                aparcaNens.quantsSexe(Criatura.NEN));
+                aparcaNens.quantitatPerSexe(Criatura.NEN));
         System.out.print(" són nens i " +
-                aparcaNens.quantsSexe(Criatura.NENA));
+                aparcaNens.quantitatPerSexe(Criatura.NENA));
         System.out.println(" són nenes");
         
         // Fem unes quantes desmatriculacions
         nom = "Pere";
-        eliminada = aparcaNens.desMatricular(nom);
+        eliminada = aparcaNens.donarDeBaixa(nom);
         System.out.println();
         if (eliminada!=null) {
             System.out.println("S'ha desmatriculat a: ");
@@ -58,7 +58,7 @@ public class Exercici_02_ProvaMainaderia {
         }
         
         nom = "Mariona";
-        eliminada = aparcaNens.desMatricular(nom);
+        eliminada = aparcaNens.donarDeBaixa(nom);
         System.out.println();
         if (eliminada!=null) {
             System.out.println("S'ha desmatriculat a: ");
@@ -69,7 +69,7 @@ public class Exercici_02_ProvaMainaderia {
         }
         
         nom = "Laia";
-        eliminada = aparcaNens.desMatricular(nom);
+        eliminada = aparcaNens.donarDeBaixa(nom);
         System.out.println();
         if (eliminada!=null) {
             System.out.println("S'ha desmatriculat a: ");
@@ -81,9 +81,9 @@ public class Exercici_02_ProvaMainaderia {
         
         // tornem a preguntar quants nens i nenes hi ha
         System.out.println();
-        System.out.print("En aquest moment tenim "+aparcaNens.numCriatures());
-        System.out.print(" criatures, de les quals "+aparcaNens.quantsSexe(Criatura.NEN));
-        System.out.print(" son nens i "+aparcaNens.quantsSexe(Criatura.NENA));
+        System.out.print("En aquest moment tenim "+aparcaNens.quantitatDeCriatures());
+        System.out.print(" criatures, de les quals "+aparcaNens.quantitatPerSexe(Criatura.NEN));
+        System.out.print(" son nens i "+aparcaNens.quantitatPerSexe(Criatura.NENA));
         System.out.println(" son nenes");
        
         // busquem unes criatures en conctret
@@ -111,7 +111,7 @@ public class Exercici_02_ProvaMainaderia {
         
         // i finalment fem un recorregut per tota la mainaderia
         System.out.println();
-        for (int i=0; i<aparcaNens.numCriatures(); i++) {
+        for (int i = 0; i<aparcaNens.quantitatDeCriatures(); i++) {
             System.out.println(aparcaNens.get(i));
         }
                 

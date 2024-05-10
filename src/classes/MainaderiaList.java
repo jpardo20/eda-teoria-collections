@@ -21,7 +21,7 @@ public class MainaderiaList implements Mainaderia {
     
     // Desmatricula la criatura de nom donat. Retorna la criatura que 
     // es desmatricula. Si no n'hi ha cap amb aquell nom retorna null
-    public Criatura desMatricular(String nom) {
+    public Criatura donarDeBaixa(String nom) {
         Criatura target = new Criatura(nom, Criatura.MIN_EDAT, Criatura.NEN);
         int index = contingut.indexOf(target);
         if (index==-1) {
@@ -45,13 +45,13 @@ public class MainaderiaList implements Mainaderia {
         }
     }
     
-    // retorna el número de criatures matriculades
-    public int numCriatures() {
+    // Mètode que retorna el número de criatures matriculades
+    public int quantitatDeCriatures() {
         return contingut.size();
     }
     
-    // retorna el nombre de criatures del sexe especificat com a paràmetre
-    public int quantsSexe (int sexe) {
+    // Mètode que retorna el nombre de criatures del sexe especificat com a paràmetre
+    public int quantitatPerSexe(int sexe) {
         
         /* Exercici: a la versió mostrada a classe de la implementació
            d'aquest mètode, la iteració sobre el contingut no es feia

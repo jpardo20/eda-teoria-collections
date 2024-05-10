@@ -12,7 +12,7 @@ public static void main (String [] args) {
             new Criatura("EVA",1, Criatura.NENA),
             new Criatura("CARLES",0, Criatura.NEN),
             new Criatura("ONA",1, Criatura.NENA),
-            new Criatura("D�DAC",0, Criatura.NEN),
+            new Criatura("DÍDAC",0, Criatura.NEN),
             new Criatura("NIL",1, Criatura.NEN),
             new Criatura("EVA",3, Criatura.NENA),
             new Criatura("JORDI",2, Criatura.NEN),

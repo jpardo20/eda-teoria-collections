@@ -1,58 +1,51 @@
 package classes;
 
 public class Criatura implements Comparable{
-    
     public static final int NEN = 10;
     public static final int NENA = 20;
-    
     public static final int MIN_EDAT=0;
     public static final int MAX_EDAT=3;
-    
+
     private String nom;
     private int edat;
     private int sexe;
-    
-    public Criatura(String nom, int edat, int sexe) {
-        if (edat<MIN_EDAT || edat>MAX_EDAT)
-            throw new IllegalArgumentException("edat no vàlida: "+edat);
-        if (sexe!=NEN && sexe!=NENA)
-            throw new IllegalArgumentException("sexe no vàlid: "+sexe);
-        
-        this.nom = nom;
-        this.edat = edat;
-        this.sexe = sexe;
+
+    public Criatura(String _nom, int _edat, int _sexe) {
+        if (_edat<MIN_EDAT || _edat>MAX_EDAT)
+            throw new IllegalArgumentException("Edat no vàlida: " + _edat);
+        if (_sexe!=NEN && _sexe!=NENA)
+            throw new IllegalArgumentException("Sexe no vàlid: " + _sexe);
+        this.nom = _nom;
+        this.edat = _edat;
+        this.sexe = _sexe;
     }
-    
+
     public String getNom() {return this.nom;}
     public int getEdat() {return this.edat;}
     public int getSexe() {return this.sexe;}
-    
-    // Redefinició del mètode toString heretat d'Object'
+
+    // Redefinició del mètode toString heretat d'Object.
     public String toString () {
         String resultat;
-        resultat = "Criatura de nom: " + this.nom + "," +
-                " té " + this.edat + " anys. ";
-        resultat += (this.sexe==NEN)? "Sexe: nen": "Sexe: nena";
+        resultat = "Criatura de nom: " + this.nom +
+                " té " + this.edat + " anys. Sexe: ";
+        resultat += (this.sexe == NEN) ?
+                "nen." : "nena.";
         return resultat;
     }
-    
-    // Implementació de la interfècie Comparable
-    public int compareTo(Object o) {
-        // Comparació basada en l'ordre lexicogràfic sense distingir majúscules 
-        // de minúscules.
-        Criatura altra = (Criatura)o;
+
+    // Implementació de la interfície Comparable
+    public int compareTo(Object _objecte) {
+        // Comparació basada en l'ordre lexicogràfic sense
+        // distingir majúscules de minúscules.
+        Criatura altra = (Criatura)_objecte;
         return this.nom.compareToIgnoreCase(altra.nom);
     }
-    
-    // redefinició del mètode equals heretat d'object.
-    public boolean equals (Object o) {
-        // redefinició compatible amb compareTo
-        try {
-            return this.compareTo(o)==0;
-        }
-        catch(ClassCastException e) {
-            return false;
-        }
+
+    // Redefinició del mètode equals heretat d'object.
+    public boolean equals (Object _objecte) {
+        // Redefinició compatible amb compareTo
+        try { return this.compareTo(_objecte) == 0; }
+        catch(ClassCastException e) { return false; }
     }
-    
 }
