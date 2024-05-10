@@ -3,7 +3,7 @@
 
 # Exercicis sobre  “col·leccions” 
 
-![alt text](./img/logo-tc.png)
+![logo-tc](./img/logo-tc.png)
 
 # EXERCICIS PER  REALITZAR
 
@@ -52,7 +52,7 @@ public class Element {
 
 Podeu trobar el codi al fitxer [**`Element.java`**](src/exemples/p01_exempleCollection/Element.java).
 
-[ClasseElement](img/eda-04-ClasseElement.png)
+![ClasseElement](img/eda-04-ClasseElement.png)
 
 
 ## Familiaritzar-se amb **`Collection`**
