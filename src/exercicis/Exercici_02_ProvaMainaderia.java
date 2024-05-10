@@ -1,7 +1,7 @@
-/* aquest programa de prova t� molt poc valor per a determinar la
- * presencia d'errors en la implementaci� de la intef�cie Mainaderia.
- * M�s que com una prova es pot entendre com un exemple d'�s de les
- * classes que puguin implementar la interf�cie */
+/* Aquest programa de prova té molt poc valor per a determinar la
+ * presència d'errors en la implementació de la interfície Mainaderia.
+ * Més que com una prova es pot entendre com un exemple d'ús de les
+ * classes que puguin implementar la interfície. */
 
 package exercicis;
 
@@ -17,7 +17,7 @@ public class Exercici_02_ProvaMainaderia {
             new Criatura("PERE",1, Criatura.NEN),
             new Criatura("NEUS",0, Criatura.NENA),
             new Criatura("ONA",1, Criatura.NENA),
-            new Criatura("D�DAC",0, Criatura.NEN),
+            new Criatura("DÍDAC",0, Criatura.NEN),
             new Criatura("MARIONA",1, Criatura.NENA),
             new Criatura("EVA",3, Criatura.NENA),
             new Criatura("FIONA",2, Criatura.NENA),
@@ -30,19 +30,22 @@ public class Exercici_02_ProvaMainaderia {
         
         aparcaNens = new MainaderiaList();
         
-        //matriculem tota la poblacio infantil
+        //matriculem tota la població infantil
         for (int i=0; i<poblacio.length; i++) {
             aparcaNens.matricular(poblacio[i]);
         }
         
         //ens interessem per quants matriculats hi ha
         System.out.println();
-        System.out.print("En aquest moment tenim "+aparcaNens.numCriatures());
-        System.out.print(" criatures, de les quals "+aparcaNens.quantsSexe(Criatura.NEN));
-        System.out.print(" son nens i "+aparcaNens.quantsSexe(Criatura.NENA));
-        System.out.println(" son nenes");
+        System.out.print("En aquest moment tenim " +
+                aparcaNens.numCriatures());
+        System.out.print(" criatures, de les quals " +
+                aparcaNens.quantsSexe(Criatura.NEN));
+        System.out.print(" són nens i " +
+                aparcaNens.quantsSexe(Criatura.NENA));
+        System.out.println(" són nenes");
         
-        //fem unes quantes desmatriculacions
+        // Fem unes quantes desmatriculacions
         nom = "Pere";
         eliminada = aparcaNens.desMatricular(nom);
         System.out.println();
@@ -51,7 +54,7 @@ public class Exercici_02_ProvaMainaderia {
             System.out.println(eliminada);
         }
         else {
-            System.out.println("no hi ha cap criatura de nom "+nom+" per desmatricular");
+            System.out.format("No hi ha cap criatura de nom %s per desmatricular-\n", nom);
         }
         
         nom = "Mariona";

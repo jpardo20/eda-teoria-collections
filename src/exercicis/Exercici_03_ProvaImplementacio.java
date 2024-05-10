@@ -1,6 +1,7 @@
 package exercicis;
 
 import classes.Criatura;
+import classes.MainaderiaDosList;
 
 public class Exercici_03_ProvaImplementacio {
     public static void main (String [] args) {
@@ -9,7 +10,7 @@ public class Exercici_03_ProvaImplementacio {
             new Criatura("PERE",1, Criatura.NEN),
             new Criatura("NEUS",0, Criatura.NENA),
             new Criatura("ONA",1, Criatura.NENA),
-            new Criatura("D�DAC",0, Criatura.NEN),
+            new Criatura("DÍDAC",0, Criatura.NEN),
             new Criatura("MARIONA",1, Criatura.NENA),
             new Criatura("EVA",3, Criatura.NENA),
             new Criatura("FIONA",2, Criatura.NENA),
@@ -22,12 +23,13 @@ public class Exercici_03_ProvaImplementacio {
         
         mainaderia = new MainaderiaDosList(); // creacio
         
-        //c�rrega
+        //càrrega
         for (int i=0; i<poblacio.length; i++) {
-            matriculat=mainaderia.matricular(poblacio[i].getNom(),
-                                             poblacio[i].getEdat(),
-                                             poblacio[i].getSexe()
-                                            );
+            matriculat = false;
+//            matriculat=mainaderia.matricular(poblacio[i].getNom(),
+//                                             poblacio[i].getEdat(),
+//                                             poblacio[i].getSexe()
+//                                            );
             if (!matriculat) {
                 System.out.println("\nSembla que no hem pogut matricular a");
                 System.out.println(poblacio[i]);

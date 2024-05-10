@@ -1,6 +1,7 @@
 package exercicis;
 
 import classes.Criatura;
+import classes.MainaderiaTresSet;
 
 public class Exercici_04_ProvaImplementacio {
     public static void main (String [] args) {
@@ -24,10 +25,11 @@ public class Exercici_04_ProvaImplementacio {
         
         //c�rrega
         for (Criatura c : poblacio) {
-            matriculat = mainaderia.matricular(c.getNom(),
-                                               c.getEdat(),
-                                               c.getSexe()
-                                              );
+            matriculat = false;
+//            matriculat = mainaderia.matricular(c.getNom(),
+//                                               c.getEdat(),
+//                                               c.getSexe()
+//                                              );
             if (!matriculat) {
                 System.out.println("\nSembla que no hem pogut matricular a");
                 System.out.println(c);
@@ -37,9 +39,9 @@ public class Exercici_04_ProvaImplementacio {
        // mostrar tot el contingut de la mainaderia
 
         System.out.println("\nContingut de la mainaderia");
-        for (Criatura c: mainaderia) {
-            System.out.println(" "+c);
-        }
+//        for (Criatura c: mainaderia) {
+//            System.out.println(" "+c);
+//        }
 
         /* CONTINUAR A PARTIR D'AQUEST PUNT */
 

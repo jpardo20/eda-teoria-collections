@@ -1,6 +1,8 @@
 package exercicis;
 
-import Keyboard.*;
+import classes.DiccioAmbMap;
+import classes.Teclat;
+
 import java.util.*;
 
 public class Exercici_05_PexProva {
@@ -51,7 +53,7 @@ public class Exercici_05_PexProva {
     int opcio; // l'opció convertida en un número
     do {
       System.out.print("opció? ");
-      cadOpcio = Keyboard.readString();
+      cadOpcio = Teclat.llegirCadena();
       try {
         opcio = Integer.parseInt(cadOpcio);
       }
@@ -66,7 +68,7 @@ public class Exercici_05_PexProva {
 
   private static void premerPerContinuar() {
     System.out.print("Prem return per continuar...");
-    Keyboard.readString();
+    Teclat.llegirCadena();
   }
 
 
@@ -77,7 +79,7 @@ public class Exercici_05_PexProva {
 
     // demanar la paraula (cadena)
     System.out.print("Paraula: ");
-    paraula = Keyboard.readString();
+    paraula = Teclat.llegirCadena();
 
     // interrogar al diccionari
     sinonims = elMeuDiccionari.recuperar(paraula);
@@ -99,10 +101,10 @@ public class Exercici_05_PexProva {
 
     // demanar la paraula
     System.out.print("Paraula: ");
-    paraula = Keyboard.readString();
+    paraula = Teclat.llegirCadena();
     // demanar el sin�nim
     System.out.print("Sinonim: ");
-    sinonim = Keyboard.readString();
+    sinonim = Teclat.llegirCadena();
 
     // afegir i dir com ha anat
     if (elMeuDiccionari.afegir(paraula, sinonim))
@@ -121,10 +123,10 @@ public class Exercici_05_PexProva {
 
     // demanar la paraula
     System.out.print("Paraula: ");
-    paraula = Keyboard.readString();
+    paraula = Teclat.llegirCadena();
     // demanar tots els sin�nim
     System.out.print("Sinonims (separats per espai(s)): ");
-    sinonims = Keyboard.readString();
+    sinonims = Teclat.llegirCadena();
 
     // passar-ho a un Set
     String [] taulaSinonims = sinonims.split(" ");
