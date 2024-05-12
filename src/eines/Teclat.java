@@ -1,4 +1,5 @@
-package classes;
+package eines;
+
 import java.io.*;
 
 // eda-06-presentacio-streams
@@ -6,9 +7,10 @@ import java.io.*;
 public class Teclat {
     // Canal d'entrada construït a partir
     // de l'entrada Standard(System.in)
-    private static BufferedReader buReCanal =
+    private static final BufferedReader buReCanal =
             new BufferedReader(
                     new InputStreamReader(System.in));
+
     // Mètode per llegir una cadena String fins al
     // final de la línia CR/LF
     public static String llegirCadena() {
@@ -24,14 +26,14 @@ public class Teclat {
             return String.valueOf((0)); // Línia inaccessible
         }
     }
+
     // Mètode per llegir un enter de mida int
     public static int llegirEnterCtrl() {
         int enterATornar = -1;
-
             try {
                 String cadena = buReCanal.readLine();
                 // Llegir una línia del canal
-                if (cadena.length() == 0) {   // si la línia és buida
+                if (cadena.isEmpty()) {   // si la línia és buida
                     System.out.printf("No has entrat res!!");
                 } else {
                     try {  // convertir a int
@@ -52,15 +54,15 @@ public class Teclat {
                 // System.exit(0); // aturar la màquina virtual
                 // return(0); // Línia de codi inaccessible.
             }
-
        return enterATornar;
     }
+
     // Mètode per llegir un enter de mida int
     public static int llegirEnter() {
         try {
             String cadena = buReCanal.readLine();
             // Llegir una línia del canal
-            if (cadena.length() == 0)   // si la línia és buida
+            if (cadena.isEmpty())   // si la línia és buida
                 return llegirEnter();   // insistir
             else
                 return Integer.parseInt(cadena); // convertir a int
@@ -71,12 +73,13 @@ public class Teclat {
             return(0); // Línia de codi inaccessible
         }
     }
+
     // Mètode per llegir un enter de mida double
     public static double llegirDouble() {
         try {
             String cadena = buReCanal.readLine();
             // Llegir una línia del canal
-            if (cadena.length() == 0)   // si la línia és buida
+            if (cadena.isEmpty())   // si la línia és buida
                 return llegirEnter();   // insistir
             else
                 return Double.parseDouble(cadena); // convertir a int
@@ -87,12 +90,13 @@ public class Teclat {
             return(0); // Línia de codi inaccessible
         }
     }
+
     // Mètode per llegir un enter de mida double
     public static long llegirLong() {
         try {
             String cadena = buReCanal.readLine();
             // Llegir una línia del canal
-            if (cadena.length() == 0)   // si la línia és buida
+            if (cadena.isEmpty())   // si la línia és buida
                 return llegirEnter();   // insistir
             else
                 return Long.parseLong(cadena); // convertir a int
@@ -103,11 +107,11 @@ public class Teclat {
             return(0); // Línia de codi inaccessible
         }
     }
+
     public static char llegirCaracter() {
         try {
-            String s = buReCanal.readLine();
-            // return s.isEmpty() ? llegirCaracter() : s.charAt(0);
-            return s.length() == 0 ? llegirCaracter() : s.charAt(0);
+            String canal = buReCanal.readLine();
+            return canal.isEmpty() ? llegirCaracter() : canal.charAt(0);
         } catch (Exception excepcio) {
             System.out.println(excepcio.getMessage());
             System.exit(0);
@@ -115,4 +119,3 @@ public class Teclat {
         }
     }
 }
-

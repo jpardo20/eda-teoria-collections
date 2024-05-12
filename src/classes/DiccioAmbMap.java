@@ -70,7 +70,7 @@ public class DiccioAmbMap implements DiccionariSinonims {
         paraules = 0;
         /* COMPLETAR: recuperar el conjunt de claus */
         /* COMPLETAR: crear la taula resultat i omplir-la amb el contingut
-         * del conjunt de claus */
+         * del conjunt de claus. */
         
         return(resultat);
     }
