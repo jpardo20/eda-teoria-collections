@@ -3,73 +3,63 @@ package classes;
 import java.util.*;
 
 public class MainaderiaList implements Mainaderia {
-
+    // Atributs
     // Referència a objecte de la classe List on "guardarem" les criatures...
     private List contingut;
-    
+    // Constructor
     public MainaderiaList() {
         // Crear la llista. Inicialment serà buida, és clar...
         this.contingut = new ArrayList();
     }
- 
-   // Afegeix una criatura. Excepció si ja hi ha una criatura igual
-    public void matricular (Criatura c) throws IllegalArgumentException {
-        if (this.contingut.contains(c))
-            throw new IllegalArgumentException("matricular: criatura repetida");
-        contingut.add(c);
+    // Mètodes
+    // Mètode matricular. Afegeix una criatura. Excepció si ja hi ha una criatura igual
+    public void matricular (Criatura criaturaADonarDAlta) throws IllegalArgumentException {
+        if (this.contingut.contains(criaturaADonarDAlta))
+            throw new IllegalArgumentException("Mètode matricular: criatura repetida");
+        contingut.add(criaturaADonarDAlta);
     }
-    
-    // Desmatricula la criatura de nom donat. Retorna la criatura que 
-    // es desmatricula. Si no n'hi ha cap amb aquell nom retorna null
-    public Criatura donarDeBaixa(String nom) {
-        Criatura target = new Criatura(nom, Criatura.MIN_EDAT, Criatura.NEN);
-        int index = contingut.indexOf(target);
-        if (index==-1) {
+
+    // Mètode donarDeBaixa. Dona de baixa la criatura segons el nom donat.
+    // Retorna la criatura que és donada de baixa.
+    // Si no n'hi ha cap amb aquell nom retorna null.
+    public Criatura donarDeBaixa(String nomCriaturaAEsborrar) {
+        Criatura criaturaAEsborrar = new Criatura(nomCriaturaAEsborrar, Criatura.MIN_EDAT, Criatura.NEN);
+        int index = contingut.indexOf(criaturaAEsborrar);
+        if (index == -1)
             return null;
-        }
-        else {
-            return (Criatura)contingut.remove(index);
-        }
+        else
+            return (Criatura) contingut.remove(index);
     }
-    
-    // Retorna la criatura que té el nom especificat. Retorna null si no
-    // n'hi ha cap
-    public Criatura buscar(String nom) {
-        Criatura target = new Criatura(nom, Criatura.MIN_EDAT, Criatura.NEN);
-        int index = contingut.indexOf(target);
-        if (index==-1) {
+    // Mètode buscar. Retorna la criatura que té el nom especificat.
+    // Retorna null si no n'hi ha cap criatura amb el nom especificat.
+    public Criatura buscar(String nomCriaturaABuscar) {
+        Criatura criaturaABuscar = new Criatura(nomCriaturaABuscar, Criatura.MIN_EDAT, Criatura.NEN);
+        int indexCriaturaABuscar = contingut.indexOf(criaturaABuscar);
+        if (indexCriaturaABuscar == -1)
             return null;
-        }
-        else {
-            return (Criatura)contingut.get(index);
-        }
+        else
+            return (Criatura) contingut.get(indexCriaturaABuscar);
     }
-    
-    // Mètode que retorna el número de criatures matriculades
+    // Mètode quantitatDeCriatures. Retorna la quantitat de criatures matriculades.
     public int quantitatDeCriatures() {
         return contingut.size();
     }
-    
-    // Mètode que retorna el nombre de criatures del sexe especificat com a paràmetre
+    // Mètode quantitatPerSexe. Retorna la quantitat de criatures del sexe rebut com a paràmetre
     public int quantitatPerSexe(int sexe) {
-        
-        /* Exercici: a la versió mostrada a classe de la implementació
-           d'aquest mètode, la iteració sobre el contingut no es feia
-           utilitzant l'iterador de la col·lecció.
-           Torneu a escriure el codi d'aquest mètode, però ara fent és
-           de l'iterador proporcionat pel mètode iterator.
-         
-           Després, podeu executar ProvaMainaderia per veure si el resultat
-           que obteniu és el mateix que s'obtenia abans */
-        return -1;
+        Criatura criaturaActual;
+        int quantitatCriatures = 0;
+        //Iterem sobre el contingut, però sense fer ús de l'iterador
+        // (MALA solució. Sempre CAL FER SERVIR un iterador)
+        for (int i = 0; i < contingut.size(); i++) {
+            criaturaActual = (Criatura) contingut.get(i);
+            if (criaturaActual.getSexe() == sexe) quantitatCriatures++;
+        }
+        return quantitatCriatures;
     }
-    
-    // Retorna la i-èssima criatura. Excepció si el paràmetre està fora
-    // dels límits actuals
+    // Mètode get. Retorna la criatura que es troba a la posició rebuda com a paràmetre.
+    // Llença una excepció IndexOutOfBoundsException si el paràmetre està fora dels límits actuals
     public Criatura get(int i) throws IndexOutOfBoundsException {
         return (Criatura)contingut.get(i);
-        // NOTA: get ja llença IndexOutOfBoundsException si el paràmetre està
-        // fora de limits
+        // NOTA: get ja llença IndexOutOfBoundsException si el paràmetre està fora de limits
     }
-
 }

@@ -1,4 +1,4 @@
-package exemples.p01_exempleCollection;
+package exemples;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,12 +6,9 @@ import java.util.LinkedList;
 import java.util.Vector;
 
 import classes.Element;
-
 import static eines.EinesJoan.*;
-import static eines.EinesJoan.pintaComSubTitol;
-//import static eines.EinesJoan.mostraElement;
 
-public class ExempleCollection {
+public class Exemple_01_Collection {
     public static void main(String[] args) {
         // Es creen tres magatzems del tipus Collection
         Collection ArrayListTotal;
@@ -60,14 +57,12 @@ public class ExempleCollection {
         // elements de VectorSegonConjunt, en aquest
         // cas TOTS s'afegeixen de cop.
         ArrayListTotal.addAll(VectorSegonConjunt);
-
-        pintaComTitol("\tExecució del programa 'ExempleCollection'!");
+        pintaIniciPrograma("Exemple_01_Collection");
+        pintaComTitol("\t1a PART: Provant els mètodes Contains i containsAll");
+        mostraObject(LinkedListPrimerConjunt,"LinkedListPrimerConjunt");
 
         // Els mètodes Contains i containsAll
         // es basen en el mètode equals.
-        pintaComTitol("\t1a PART: Provant els mètodes Contains i containsAll");
-        mostraCollection(LinkedListPrimerConjunt,"LinkedListPrimerConjunt");
-
         for (int i = 0; i < 3; i++) {
             System.out.format("algunsElement[%d]        = [%s]\n" , i , algunsElement[i].tornaComCadena());
             System.out.format("El resultat de l'execució de" +
@@ -77,36 +72,33 @@ public class ExempleCollection {
             System.out.format("\t\t%s\n",LinkedListPrimerConjunt.contains(algunsElement[i]));
             System.out.println("\t" + "-".repeat(20));
         }
-        System.out.println("\t --- 1a Part acabada! --- ");
-        saltaLinies(10);
+        pintaPartAcabada(1);
 
+        pintaComTitol("\t2a PART: Provant els mètodes Remove i removeAll");
+        mostraObject(LinkedListPrimerConjunt,"LinkedListPrimerConjunt");
+        System.out.format("\tContingut de algunsElement[1] = %s\n",algunsElement[1].tornaComCadena());
+        pintaExecucioComanda("\tLinkedListPrimerConjunt.remove(algunsElement[1])");
         // Els mètodes Remove i removeAll també
         // es basen en el mètode equals.
-        pintaComTitol("\t2a PART: Provant els mètodes Remove i removeAll");
-        mostraCollection(LinkedListPrimerConjunt,"LinkedListPrimerConjunt");
-        System.out.format("\tContingut de algunsElement[1] = %s\n",algunsElement[1].tornaComCadena());
-
-        pintaComSubTitol("  --->  Execució de la comanda `LinkedListPrimerConjunt.remove(algunsElement[1])`");
         LinkedListPrimerConjunt.remove(algunsElement[1]);
 
-        mostraCollection(LinkedListPrimerConjunt,"LinkedListPrimerConjunt");
+        mostraObject(LinkedListPrimerConjunt,"LinkedListPrimerConjunt");
         pitjaTeclaPerContinuar();
-        mostraCollection(ArrayListTotal, "ArrayListTotal");
-        mostraCollection(VectorSegonConjunt,"VectorSegonConjunt");
+        mostraObject(ArrayListTotal, "ArrayListTotal");
+        mostraObject(VectorSegonConjunt,"VectorSegonConjunt");
 
-        pintaComSubTitol("  --->  Execució de la comanda `ArrayListTotal.removeAll(VectorSegonConjunt)`");
+        pintaExecucioComanda("\tArrayListTotal.removeAll(VectorSegonConjunt)");
         ArrayListTotal.removeAll(VectorSegonConjunt);
-        mostraCollection(ArrayListTotal, "ArrayListTotal");
+        mostraObject(ArrayListTotal, "ArrayListTotal");
 
-        System.out.println("\t --- 2a Part acabada! --- ");
-        saltaLinies(10);
+        pintaPartAcabada(2);
 
         pintaComTitol("\t3a PART: Provant el mètode setValue amb un i dos paràmetres");
-        mostraCollection(ArrayListTotal,"ArrayListTotal");
+        mostraObject(ArrayListTotal,"ArrayListTotal");
         pintaComSubTitol("\tMètode setValue amb un paràmetre.");
         pitjaTeclaPerContinuar();
         System.out.format("\tContingut de algunsElement[1] = %s\n",algunsElement[1].tornaComCadena());
-        pintaComSubTitol("  --->  Execució de la comanda `algunsElement[1].setValue(12)`");
+        pintaExecucioComanda("\talgunsElement[1].setValue(12)");
         algunsElement[1].setValue(12);
         System.out.format("algunsElement[%d]        = [%s]\n" , 1 , algunsElement[1].tornaComCadena());
         System.out.println("\t---------------");
@@ -115,21 +107,17 @@ public class ExempleCollection {
         System.out.format("\tContingut de algunsElement[0] = %s\n",algunsElement[0].tornaComCadena());
         System.out.format("\tContingut de algunsElement[2] = %s\n",algunsElement[2].tornaComCadena());
 
-        pintaComSubTitol("  --->  Execució de la comanda `algunsElement[2].setValue(algunsElement[0].getValue() + 3)`");
+        pintaExecucioComanda("\talgunsElement[2].setValue(algunsElement[0].getValue() + 3)");
         algunsElement[2].setValue(algunsElement[0].getValue() + 3);
         System.out.format("\tContingut de algunsElement[0] = %s\n",algunsElement[0].tornaComCadena());
         System.out.format("\tContingut de algunsElement[2] = %s\n",algunsElement[2].tornaComCadena());
 
-        System.out.println("\t --- 3a Part acabada! --- ");
-        saltaLinies(10);
-
+        pintaPartAcabada(3);
         pintaComTitol("\t4a PART: Codi per sumar TOTS els valors de VectorSegonConjunt.");
-        mostraCollection(ArrayListTotal,"ArrayListTotal");
+        mostraObject(ArrayListTotal,"ArrayListTotal");
 
         int sumaDElements = 0;
-        //        ArrayListTotal.stream().forEach(System.out::println);
-
-        // toArray provides the contents in an array
+        // El mètode toArray torna una cadena amb el contingut del Vector en format String
         Object[] elementsDArrayListTotal = ArrayListTotal.toArray();
 
         for (int i=0; i<ArrayListTotal.size(); i++) {
@@ -137,8 +125,7 @@ public class ExempleCollection {
             sumaDElements += ((Element) elementsDArrayListTotal[i]).getValue();;
         }
         System.out.println("La suma d'Elements és: " + sumaDElements);
-        System.out.println("\t --- 4a Part acabada! --- ");
-        pintaComTitol("\tEl programa 'ExempleCollection' s'ha acabat!");
-        System.out.println("\tFins la propera !!!!!");
+        pintaPartAcabada(4);
+        pintaFinalPrograma("Exemple_01_Collection");
     }
 }

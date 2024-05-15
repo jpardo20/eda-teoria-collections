@@ -9,6 +9,14 @@ import classes.Criatura;
 import classes.Mainaderia;
 import classes.MainaderiaList;
 
+/* Exercici: a la versió mostrada a classe de la implementació
+   d'aquest mètode, la iteració sobre el contingut no es feia
+   utilitzant l'iterador de la col·lecció.
+   Torneu a escriure el codi d'aquest mètode, però ara fent és
+   de l'iterador proporcionat pel mètode iterator.
+   Després, podeu executar ProvaMainaderia per veure si el resultat
+   que obteniu és el mateix que s'obtenia abans */
+
 public class Exercici_02_ProvaMainaderia {
 	
     public static void main (String [] args) {

@@ -1,15 +1,35 @@
 package eines;
 
-import eines.Teclat.*;
+import classes.Criatura;
+import classes.MainaderiaList;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class EinesJoan {
-    public static void mostraCollection(Object colleccioAMostrar, String nomColleccio){
+    static String liniaDecoracio = "-".repeat(40);
+
+    public static void mostraVector(String[] vectorAMostrar, String nomVector) {
+        String cadenaTitol = "\tContingut de " + nomVector;
+        System.out.println(cadenaTitol);
+        for (int i = 0; i < vectorAMostrar.length; i++) {
+            System.out.print(vectorAMostrar[i]);
+            if (i < vectorAMostrar.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("\n\t" + liniaDecoracio);
+    }
+
+    public static void mostraObject(Object colleccioAMostrar, String nomColleccio) {
         String cadenaToString = colleccioAMostrar.toString();
-        String cadenesAEliminar[] = {"Element","], ","]]"};
+        String cadenesAEliminar[] = {"Element", "], ", "]]"};
         String cadenaTitol = "\tContingut de " + nomColleccio;
         System.out.println(cadenaTitol);
+        System.out.println("\t" + liniaDecoracio);
         for (int i = 0; i < cadenesAEliminar.length; i++) {
-            cadenaToString = cadenaToString.replace(cadenesAEliminar[i],"");
+            cadenaToString = cadenaToString.replace(cadenesAEliminar[i], "");
         }
         String[] trossosCadenaToString = cadenaToString.split("\\[");
         String[] elements;
@@ -20,29 +40,137 @@ public class EinesJoan {
             cadena += "[" + elements[0] + "," + elements[1] + "] ";
         }
         System.out.println(cadena);
-//        cadenaTitol += "\t";
-        pintaLiniaSotaTitol(cadenaTitol,true);
+        System.out.println("\t" + liniaDecoracio);
     }
 
-    public static void pintaLiniaSotaTitol(String titol, boolean ... tabulador){
-        if (tabulador!=null)
-            System.out.print("\t");
+    public static void mostraMapCriaturaString(Map<Criatura, String> mapa, String nomMapa) {
+        String cadenaTitol = "\tContingut de " + nomMapa;
+        System.out.println(cadenaTitol);
+        for (Map.Entry<Criatura, String> entry : mapa.entrySet()) {
+            System.out.print("Clau = " + entry.getKey() + "\t, Valor = "+ entry.getValue() + "\n");
+        }
+        System.out.println("---------------------------------------");
     }
 
-    public static void pintaComSubTitol(String subTitol, boolean ... tabulador){
-        if (tabulador!=null)
-            System.out.print("\t");
+    public static void mostraVectorCriatura(Criatura[] vectorCriatures, String nomVector){
+        String cadenaTitol = "\tContingut de " + nomVector;
+        System.out.println(cadenaTitol);
+        for (int i = 0; i < vectorCriatures.length; i++) {
+            System.out.format("Nom: %s\t%sEdat: %d\tSexe: %d.\n",
+                    vectorCriatures[i].getNom(),
+                    (vectorCriatures[i].getNom().length()<7)?"\t":"",
+                    vectorCriatures[i].getEdat(),
+                    vectorCriatures[i].getSexe());
+
+        }
+        System.out.println("\t"+ liniaDecoracio);
+    }
+
+    public static void mostraMainaderiaList(MainaderiaList collecioRebuda, String nomColleccio){
+        String cadenaTitol = "\tContingut de " + nomColleccio;
+        System.out.println(cadenaTitol);
+        for (int i = 0; i < collecioRebuda.quantitatDeCriatures(); i++) {
+            System.out.format("Nom: %s\t%sEdat: %d\tSexe: %d.\n",
+                    collecioRebuda.get(i).getNom(),
+                    (collecioRebuda.get(i).getNom().length()<7)?"\t":"",
+                    collecioRebuda.get(i).getEdat(),
+                    collecioRebuda.get(i).getSexe());
+        }
+        System.out.println("\t"+ liniaDecoracio);
+    }
+
+    public static void mostraLinkedListCriatures(LinkedList collecioRebuda, String nomColleccio){
+        String cadenaTitol = "\tContingut de " + nomColleccio;
+        System.out.println(cadenaTitol);
+        for (int i = 0; i < collecioRebuda.size(); i++) {
+            System.out.println(collecioRebuda.get(i).toString());
+//            System.out.format("Nom: %s\t%sEdat: %d\tSexe: %d.\n",
+//                    collecioRebuda.get(i).toString(),
+//                    (collecioRebuda.get(i).getNom().length()<7)?"\t":"",
+//                    collecioRebuda.get(i).getEdat(),
+//                    collecioRebuda.get(i).getSexe());
+        }
+        System.out.println("\t"+ liniaDecoracio);
+    }
+    public static void mostraListCriatures(
+            List colleccioAMostrar, String nomColleccio) {
+        final int ELEMENTS_PER_FILA = 4;
+        String saltaSeguentLinia = "";
+        String cadenaTitol = "\tContingut de " + nomColleccio;
+        System.out.println(cadenaTitol);
+        System.out.println("\t"+ liniaDecoracio);
+        if(colleccioAMostrar.size() > ELEMENTS_PER_FILA){
+            saltaSeguentLinia = "\n";
+        }
+        String cadenaToString = colleccioAMostrar.toString();
+        String campsAEsborrar[] = {"[", "Criatura de nom: ", ".]"};
+        String campsRegistre[] = {" té ", " anys. Sexe: "};
+        for (int i = 0; i < campsAEsborrar.length; i++) {
+            cadenaToString = cadenaToString.replace(campsAEsborrar[i], "");
+        }
+        for (int i = 0; i < campsRegistre.length; i++) {
+            cadenaToString = cadenaToString.replace(campsRegistre[i], "#");
+        }
+        cadenaToString = cadenaToString.replace("., ", "|");
+        String[] registres = cadenaToString.split("(\\|)");
+        String cadena = "";
+        String[] camps;
+
+        for (int i = 0; i < registres.length; i++) {
+            camps = registres[i].split("#");
+            cadena += "(" + camps[0] + "," + camps[1] + "," + camps[2] + ")";
+            if (i < registres.length - 1) {
+                cadena += ", ";
+            }
+            if ( (i+1) % (ELEMENTS_PER_FILA) == 0)  {
+                cadena += saltaSeguentLinia;
+            }
+        }
+        System.out.println(cadena);
+        System.out.println("\t"+ liniaDecoracio);
+    }
+
+
+    public static void pintaIniciPrograma(String nomAplicacio) {
+        pintaComTitol("\tExecució del programa " + nomAplicacio + "!");
+    }
+
+    public static void pintaFinalPrograma(String nomAplicacio){
+        pintaComTitol("\tEl programa '" + nomAplicacio + "' s'ha acabat!");
+        pintaComiat();
+    }
+    public static void pintaComiat(){
+        System.out.println("\tFins la propera !!!!!");
+        System.out.println("\t"+ liniaDecoracio);
+    }
+
+    public static void pintaPartAcabada(int partAcabada){
+        System.out.println("\t ======== " + partAcabada + "a Part acabada! ======== \n");
+        pitjaTeclaPerContinuar();
+    }
+
+    public static void pintaExecucioComanda(String comanda) {
+        System.out.println("===>  Execució de la comanda:");
+        System.out.println(comanda);
+        System.out.println("\t"+ liniaDecoracio);
+
+    }
+    public static void pintaLiniaSotaTitol(String titol){
+        System.out.println("-".repeat(titol.length()));
+    }
+
+public static void pintaComSubTitolSenseSubratllar(String subTitol){
         System.out.println(subTitol);
-        if (tabulador!=null)
-            System.out.print("\t");
+    }
+
+    public static void pintaComSubTitol(String subTitol){
+        System.out.println(subTitol);
         System.out.println("-".repeat(subTitol.length()));
     }
     
-    public static void pintaComTitol(String titol, boolean ...  tabulador){
-        if (tabulador!=null)
-            System.out.print("\t");
+    public static void pintaComTitol(String titol){
         System.out.println(titol);
-        pintaLiniaSotaTitol(titol, true);
+        pintaLiniaSotaTitol(titol);
     }
 
     public static void saltDeLinia(){
@@ -56,7 +184,7 @@ public class EinesJoan {
 
     public static void pitjaTeclaPerContinuar(String...  missatgesRebuts){
         if (missatgesRebuts.length == 0)
-            System.out.print("\t ---- Pitja INTRO per continuar... ----");
+            System.out.print("\tPitja INTRO per continuar...");
         else
             System.out.print(missatgesRebuts[0]);
         try { System.in.read();
