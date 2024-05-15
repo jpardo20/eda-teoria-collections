@@ -1,19 +1,20 @@
 ## Ens basarem en aquestes classes per fer els següents exercicis:
 
+### Ìndex de **Classes**
+
 1. **Classe** [**`Element`**](#primera-classe-element)
 
 1. **Classe** [**`Criatura`**](#segona-classe-criatura)
 
 3. **Interfície** [**`Mainaderia`**](#tercera-interfície-mainaderia)
 
+## Primera Classe **`Element`**
 
-## Primera Classe Element
-
-### Diagrama UML - Classe Element
+### Diagrama UML - Classe **`Element`**
 
 ![ClasseElement](../img/eda-04-ClasseElement.png)
 
-### Desenvolupament - Classe Element
+### Desenvolupament - Classe **`Element`**
 
 ```java
 public class Element {
@@ -63,13 +64,15 @@ public class Element {
 
 Podeu trobar el codi al fitxer [**`Element.java`**](../src/classes/Element.java).
 
-## Segona Classe Criatura
+[Torna a ìndex de **classes**](#ìndex-de-classes)
 
-### Diagrama UML - Classe Criatura
+## Segona Classe **`Criatura`**
+
+### Diagrama UML - Classe **`Criatura`**
 
 ![ClasseCriatura](../img/eda-uml-class-criatura.png)
 
-### Desenvolupament - Classe Criatura
+### _Desenvolupament_ - Classe **`Criatura`**
 
 ```java
 public class Criatura implements Comparable{
@@ -126,6 +129,8 @@ public class Criatura implements Comparable{
 
 Podeu trobar el codi al fitxer [**`Criatura.java`**](../src/classes/Criatura.java).
 
+[Torna a ìndex de **classes**](#ìndex-de-classes)
+
 ## Tercera interfície **`Mainaderia`**
 
 A continuació veiem l'exemple de la definició d'una **`interfície`** anomenada **`Mainaderia`** que fa servir la **Classe** [**`Criatura`**](../src/classes/Criatura.java)
@@ -152,10 +157,8 @@ public interface Mainaderia {
 }
 ```
 
+[Torna a ìndex de **classes**](#ìndex-de-classes)
 
 ## [Anterior](./01-portada.md)
 
 ## [Següent](./03-exercici-01)
-
-
-### [Anterior <- *Portada*](./01-portada.md)&nbsp;&nbsp;-&nbsp;&nbsp;**Portada**&nbsp;&nbsp;-&nbsp;&nbsp; [Següent -> **_Classes_**](./01-portada.md)
