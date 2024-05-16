@@ -159,6 +159,6 @@ public interface Mainaderia {
 
 [Torna a ìndex de **classes**](#ìndex-de-classes)
 
-## [Anterior](./01-portada.md)
+## [Anterior **`Portada`**](./01-portada.md)
 
-## [Següent](./03-exercici-01.md)
+## [Següent **`Exercici_00`**](./03-exercici-00)

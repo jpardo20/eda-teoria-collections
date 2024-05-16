@@ -1,4 +1,4 @@
-# Exercici 01
+# Exercici 00
 
 ## Familiaritzar-se amb **`Collection`**
 
