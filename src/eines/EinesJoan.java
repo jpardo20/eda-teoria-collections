@@ -43,14 +43,6 @@ public class EinesJoan {
         System.out.println("\t" + liniaDecoracio);
     }
 
-    public static void mostraMapCriaturaString(Map<Criatura, String> mapa, String nomMapa) {
-        String cadenaTitol = "\tContingut de " + nomMapa;
-        System.out.println(cadenaTitol);
-        for (Map.Entry<Criatura, String> entry : mapa.entrySet()) {
-            System.out.print("Clau = " + entry.getKey() + "\t, Valor = "+ entry.getValue() + "\n");
-        }
-        System.out.println("---------------------------------------");
-    }
 
     public static void mostraVectorCriatura(Criatura[] vectorCriatures, String nomVector){
         String cadenaTitol = "\tContingut de " + nomVector;

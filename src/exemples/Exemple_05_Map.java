@@ -5,7 +5,19 @@ import static eines.EinesJoan.*;
 
 import classes.Criatura;
 
-public class Exemple_05_Map_01 {
+public class Exemple_05_Map {
+
+    public static void mostraMapCriaturaString(Map<Criatura, String> mapaCriaturaString,
+                                               String nomMapa) {
+        String cadenaTitol = "\tContingut de " + nomMapa;
+        System.out.println(cadenaTitol);
+        for (Map.Entry<Criatura, String> criaturaActual : mapaCriaturaString.entrySet()) {
+            System.out.print("Clau = " + criaturaActual.getKey() + "\t, " +
+                    "Valor = "+ criaturaActual.getValue() + "\n");
+        }
+        System.out.println("---------------------------------------");
+    }
+
 	public static void main (String [] args) {
         Criatura[] poblacio = {
             new Criatura("NIL",0, Criatura.NEN),
@@ -81,8 +93,8 @@ public class Exemple_05_Map_01 {
 //            System.out.println("   és " + articlePediatre.toLowerCase() + " " + nomPediatra);
         }
 
-        pintaPartAcabada(3);
-        pintaComSubTitolSenseSubratllar("\t4a PART: Consulta per recuperar el conjunt de claus.");
+        pintaPartAcabada(2);
+        pintaComSubTitolSenseSubratllar("\t3a PART: Consulta per recuperar el conjunt de claus.");
 
         // Map també ens permet recuperar el conjunt de claus
         // en el nostre cas les claus són les criatures.
@@ -93,15 +105,27 @@ public class Exemple_05_Map_01 {
         for (Criatura criaturaActual : criaturesAteses)
             System.out.println("\t" + criaturaActual);
 
-        pintaPartAcabada(2);
-        pintaComSubTitolSenseSubratllar("\t3a PART: Consulta per recuperar el conjunt de claus.");
+        pintaPartAcabada(3);
+        pintaComSubTitolSenseSubratllar("\t4a PART: Consulta per recuperar el conjunt de claus.");
         // Map ens permet recuperar la col·lecció de valors associats
         // a les claus (en aquest exemple els valors són els pediatres
         // -Strings-)
         Collection<String> pediatres;
+
         pediatres = serveiPediatria.values();
         System.out.println("\n Els/les pediatres del servei són:");
-        for (String ped : pediatres) System.out.println("  "+ped);
+        for (String pediatraActual : pediatres)
+            System.out.println("  " + pediatraActual);
+
+        // HashSet
+        System.out.println("\n Els/les pediatres 'ùnics'" +
+                " del servei són:");
+        HashSet<String> pediatresSenseDuplicats = new HashSet<String>();
+        for (String pediatraActual : pediatres)
+            pediatresSenseDuplicats.add(pediatraActual);
+
+        for (String pediatraActual : pediatresSenseDuplicats)
+            System.out.println("  "+pediatraActual);
 
     }
 }
