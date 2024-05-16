@@ -161,4 +161,4 @@ public interface Mainaderia {
 
 ## [Anterior](./01-portada.md)
 
-## [Següent](./03-exercici-01)
+## [Següent](./03-exercici-01.md)
