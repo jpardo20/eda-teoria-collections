@@ -59,24 +59,24 @@ public class Exemple_01_Collection {
         // elements de VectorSegonConjunt, en aquest
         // cas TOTS s'afegeixen de cop.
         ArrayListTotal.addAll(VectorSegonConjunt);
-        (...)
+        // (...)
         // Els mètodes Contains i containsAll
         // es basen en el mètode equals.
         for (int i = 0; i < 3; i++) {
-            (...)
+            // (...)
             System.out.println("\t" + "-".repeat(20));
         }
-        (...)
+        // (...)
         // Els mètodes Remove i removeAll també
         // es basen en el mètode equals.
         LinkedListPrimerConjunt.remove(algunsElement[1]);
-        (...)
+        // (...)
         ArrayListTotal.removeAll(VectorSegonConjunt);
-        (...)
+        // (...)
         algunsElement[1].setValue(12);
-        (...)
+        // (...)
         algunsElement[2].setValue(algunsElement[0].getValue() + 3);
-        (...)
+        // (...)
         int sumaDElements = 0;
         // El mètode toArray torna una cadena amb el conitgut del Vector
         Object[] elementsDArrayListTotal = ArrayListTotal.toArray();
@@ -85,7 +85,7 @@ public class Exemple_01_Collection {
             sumaDElements += ((Element) elementsDArrayListTotal[i]).getValue();;
         }
         System.out.println("La suma d'Elements és: " + sumaDElements);
-        (...)
+        // (...)
     }
 }
 ```
@@ -190,41 +190,41 @@ public class Exemple_02_GuardarCriatures {
 		for (int i = 0; i < poblacioDeCriatures.length; i++) {
 			llarInfants.add(poblacioDeCriatures[i]);
 		}
-        (...)
+        // (...)
 		// El mètode add(Object obj) afegeix l'objecte rebut
 		// al final de la llista.
 		llarInfants.add(
 				new Criatura("OLGA", 2, Criatura.NENA));
-        (...)
+        // (...)
 		// El mètode add(Object o, int i) afegeix a la posició i
 		// l'element rebut desplaçant la resta d'elements cap
 		// als índexs superiors si cal.
 		llarInfants.add(3,
 				new Criatura("JOAN", 1, Criatura.NEN));
-        (...)
+        // (...)
         // Les llistes són accessibles per posició,
 		// com si fossin vectors (Arrays) però fent
 		// servir el mètode get.
 		for (int i = 0; i < llarInfants.size(); i++) {
 			System.out.println(llarInfants.get(i));
 		}
-        (...)
+        // (...)
 		// Les llistes permeten de canviar el contingut d'una posició
 		llarInfants.set(8,
 				new Criatura("ELISA", 3, Criatura.NENA));
-        (...)
+        // (...)
         llarInfants.set(2,
 				llarInfants.get(7));
-        (...)
+        // (...)
         // Les llistes permeten de fer cerques basades en EQUALS
 		int primerNil, darrerNil;
 		Criatura objetiuDeLaCerca = new Criatura("nil", 3, Criatura.NEN);
-        (...)
+        // (...)
         System.out.format("primerNil = %s.\n", primerNil);
 		darrerNil = llarInfants.lastIndexOf(objetiuDeLaCerca);
-        (...)
+        // (...)
         System.out.format("darrerNil = %s.\n", darrerNil);
-        (...)
+        // (...)
     }
 }
 ```
@@ -357,7 +357,7 @@ public class Exemple_03_MainaderiaList {
         };
         String[] nomsADonarDeBaixa = {"Pere", "Mariona", "Laia"};
         String[] nomsABuscar = {"fiona", "Mariona"};
-        (...)
+        // (...)
         aparcaNens = new MainaderiaList();
         // Matriculem tota la població infantil.
         for (int i=0; i<poblacioInfantil.length; i++) {
@@ -371,11 +371,12 @@ public class Exemple_03_MainaderiaList {
                 aparcaNens.quantitatPerSexe(Criatura.NEN),
                 aparcaNens.quantitatPerSexe(Criatura.NENA)
         );
-        (...)
+        // (...)
         // Donem de baixa unes quantes criatures.
         for (int i = 0; i < nomsADonarDeBaixa.length; i++) {
             nomCriatura = nomsADonarDeBaixa[i];
-            pintaComSubTitolSenseSubratllar("\n\tVolem donar de baixa a una criatura amb el nom " + nomCriatura);
+            pintaComSubTitolSenseSubratllar("\n\tVolem donar de baixa" +
+                    " a una criatura amb el nom " + nomCriatura);
             criaturaEsborrada = aparcaNens.donarDeBaixa(nomCriatura);
             System.out.println();
             if (criaturaEsborrada != null) {
@@ -391,7 +392,7 @@ public class Exemple_03_MainaderiaList {
                 pitjaTeclaPerContinuar();
             }
         }
-        (...)
+        // (...)
         //  Tornem a preguntar quants nens i nenes hi ha matriculats.
         System.out.format("\nEn aquest moment tenim %d criatures," +
                         " de les quals %d son nens i %d son nenes.\n",
@@ -399,7 +400,7 @@ public class Exemple_03_MainaderiaList {
                 aparcaNens.quantitatPerSexe(Criatura.NEN),
                 aparcaNens.quantitatPerSexe(Criatura.NENA)
         );
-        (...)
+        // (...)
         // Busquem unes criatures en concret
         for (int i = 0; i < nomsABuscar.length; i++) {
             nomCriatura = nomsABuscar[i];
@@ -415,12 +416,12 @@ public class Exemple_03_MainaderiaList {
                 System.out.println("No s'ha trobat cap" +
                         "criatura de nom " + nomCriatura);
         }
-        (...)
+        // (...)
         // i finalment fem un recorregut per tota la mainaderia.
         for (int i = 0; i<aparcaNens.quantitatDeCriatures(); i++) {
             System.out.println(aparcaNens.get(i));
         }
-        (...)
+        // (...)
     }
 }
 ```
@@ -501,118 +502,117 @@ Criatura de nom: ENIA té 3 anys. Sexe: nena.
 
 A continuació veiem l'exemple **`Exemple_04_Iteracio`** que fa servir un **`LinkedList`** per guardar elements de la **classe** [**`Criatura`**](../src/classes/Criatura.java)
 
+```java
+public class Exemple_04_Iteracio {
+    public static void main (String [] args ) {
+
+        List nens = new LinkedList();
+        List nenes = new LinkedList();
+        List llarInfants = new LinkedList();
+        Iterator it;
+        Object membre;
+        Criatura criaturaProfe = null;
+
+        nens.add(new Criatura("NIL",0, Criatura.NEN));
+        nens.add(new Criatura("PERE",1, Criatura.NEN));
+        nens.add(new Criatura("DÍDAC",0, Criatura.NEN));
+        nens.add(new Criatura("NIL",1, Criatura.NEN));
+        nens.add(new Criatura("VICTOR", 2, Criatura.NEN));
+        nens.add(new Criatura("PAU", 3, Criatura.NEN));
+
+        nenes.add(new Criatura("NEUS",0, Criatura.NENA));
+        nenes.add(new Criatura("ONA",1, Criatura.NENA));
+        nenes.add(new Criatura("EVA",3, Criatura.NENA));
+        nenes.add(new Criatura("FIONA",2, Criatura.NENA));
+        nenes.add(new Criatura("ENIA",3, Criatura.NENA));
+        // (...)
+        mostraListCriatures(nens, "nens");
+        mostraListCriatures(nenes, "nenes");
+        // (...)
+        llarInfants.addAll(nens);
+        // (...)
+        llarInfants.addAll(nenes);
+        // (...)
+        // Fer servir un iterador per mostrar el contingut.
+        // (...)
+        it = llarInfants.iterator();
+        while (it.hasNext()) {
+            membre = it.next();
+            System.out.println(membre);
+        }
+        // (...)
+        // Fer servir un iterador per calcular edat mitjana
+        double sumaEdats = 0;
+        double edatMitja;
+        it = llarInfants.iterator();
+        while (it.hasNext()) {
+            membre = it.next(); // membre ha estat declarat Object
+            criaturaProfe = (Criatura)membre;
+            sumaEdats = sumaEdats+ criaturaProfe.getEdat();
+        }
+        edatMitja = sumaEdats/llarInfants.size();
+        System.out.format("L'edat mitja és de %,.2f anys.\n", edatMitja);
+        // Fer servir un iterador per buscar una nena de tres anys
+        // (...)
+        boolean trobada = false;
+        it = llarInfants.iterator();
+        while (it.hasNext() && !trobada) {
+            criaturaProfe = (Criatura)it.next();
+            if (criaturaProfe.getSexe()== Criatura.NENA && criaturaProfe.getEdat()==3)
+                trobada = true;
+        }
+        if (trobada) {
+            System.out.println("La nena de tres anys trobada és: ");
+            System.out.println(criaturaProfe);
+        }
+        else
+            System.out.println("La cerca no ha tingut èxit!");
+        // (...)
+        // Eliminar criatures de 0 o de 3 anys
+        it = llarInfants.iterator();
+        while (it.hasNext()) {
+            criaturaProfe = (Criatura)it.next();
+            if (criaturaProfe.getEdat()==0 || criaturaProfe.getEdat()==3) {
+                // llarInfants.remove(criatura) // incorrecte!!!
+                it.remove(); // CORRECTE!!! Elimina el darrer element proporcionat per next
+            }
+        }
+        // (...)
+    }
+}
+```
+
+    
 <details><summary>Pitja per veure un exemple de l'execució del programa Exemple_04_Iteracio</summary>
 
 #### Execució del programa d'**`Exemple_04_Iteracio.java`**
 ```
-	Execució del programa 'ExempleMainaderia'!
--------------------------------------------
-	1a PART: Provant el mètode add amb un bucle for.
-"Matriculem" a "aparcaNens" tota la "població" infantil.
-Contingut de poblacioInfantil
-Nom: NIL		Edat: 0	Sexe: 10.
-Nom: PERE		Edat: 1	Sexe: 10.
-Nom: NEUS		Edat: 0	Sexe: 20.
-Nom: ONA		Edat: 1	Sexe: 20.
-Nom: DÍDAC		Edat: 0	Sexe: 10.
-Nom: MARIONA	Edat: 1	Sexe: 20.
-Nom: EVA		Edat: 3	Sexe: 20.
-Nom: FIONA		Edat: 2	Sexe: 20.
-Nom: ENIA		Edat: 3	Sexe: 20.
-----------------------------------------
-Contingut de aparcaNens
-Nom: NIL		Edat: 0	Sexe: 10.
-Nom: PERE		Edat: 1	Sexe: 10.
-Nom: NEUS		Edat: 0	Sexe: 20.
-Nom: ONA		Edat: 1	Sexe: 20.
-Nom: DÍDAC		Edat: 0	Sexe: 10.
-Nom: MARIONA	Edat: 1	Sexe: 20.
-Nom: EVA		Edat: 3	Sexe: 20.
-Nom: FIONA		Edat: 2	Sexe: 20.
-Nom: ENIA		Edat: 3	Sexe: 20.
-----------------------------------------
-
-En aquest moment tenim 9 criatures, de les quals 3 son nens i 6 son nenes.
-
-	2a PART: Provant el mètode donarDeBaixa amb un bucle for.
-Donem de baixa unes quantes criatures fent un for sobre el vector 'nomsADonarDeBaixa'.
-Contingut de nomsADonarDeBaixa
-Pere, Mariona, Laia
-----------------------------------------
-
-    Volem donar de baixa a una criatura amb el nom Pere
-
-S'ha donat de baixa a la següent criatura:
-Criatura de nom: PERE té 1 anys. Sexe: nen.
-
-    Volem donar de baixa a una criatura amb el nom Mariona
-
-S'ha donat de baixa a la següent criatura:
-Criatura de nom: MARIONA té 1 anys. Sexe: nena.
-
-    Volem donar de baixa a una criatura amb el nom Laia
-
-No hi ha cap criatura de nom Laia per donar de baixa.
-
-Ens tornem a interessar per quantes criatures matriculades hi ha.
-
-En aquest moment tenim 7 criatures, de les quals 2 son nens i 5 son nenes.
-
-	3a Part: Busquem criatures.
-Busquem unes quantes criatures fent un for sobre el vector 'nomsABuscar'.
-Contingut de nomsABuscar
-fiona, Mariona
-----------------------------------------
-    Busquem una criatura amb el nom fiona
-S'ha trobat una criatura de nom fiona:
-Criatura de nom: FIONA té 2 anys. Sexe: nena.
-    Busquem una criatura amb el nom Mariona
-No s'ha trobat capcriatura de nom Mariona
-
-Finalment fem un recorregut amb un for, per tota la mainaderia.
-Criatura de nom: NIL té 0 anys. Sexe: nen.
-Criatura de nom: NEUS té 0 anys. Sexe: nena.
-Criatura de nom: ONA té 1 anys. Sexe: nena.
-Criatura de nom: DÍDAC té 0 anys. Sexe: nen.
-Criatura de nom: EVA té 3 anys. Sexe: nena.
-Criatura de nom: FIONA té 2 anys. Sexe: nena.
-Criatura de nom: ENIA té 3 anys. Sexe: nena.
-Fins la propera !!!!!
-----------------------------------------
-```
-</details>
-
-<details><summary>Pitja per veure un exemple de l'execució del programa Exemple_04_Iteracio</summary>
-
-#### Execució del programa d'**`Exemple_04_Iteracio.java`**
-```
-	Execució del programa Exemple_04_Iteracio !
-	1a PART: Provant el mètode addAll
-
-	Contingut de nens	
-(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen),
+    1a PART: Provant el mètode addAll
+	Contingut de nens
+	----------------------------------------
+(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen), 
 (VICTOR,2,nen), (PAU,3,nen)
-    Contingut de nenes
-(NEUS,0,nena), (ONA,1,nena), (EVA,3,nena), (FIONA,2,nena),
+	----------------------------------------
+	Contingut de nenes
+	----------------------------------------
+(NEUS,0,nena), (ONA,1,nena), (EVA,3,nena), (FIONA,2,nena), 
 (ENIA,3,nena)
-
-===>  Execució de la comanda:
-llarInfants.addAll(nens)
-
-Contingut de llarInfants
-----------------------------------------
-(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen),
+	----------------------------------------
+	llarInfants.addAll(nens)
+	----------------------------------------
+	Contingut de llarInfants
+	----------------------------------------
+(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen), 
 (VICTOR,2,nen), (PAU,3,nen)
-
-===>  Execució de la comanda:
-llarInfants.addAll(nenes)
-
-Contingut de llarInfants
-----------------------------------------
-(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen),
-(VICTOR,2,nen), (PAU,3,nen), (NEUS,0,nena), (ONA,1,nena),
+	----------------------------------------
+	llarInfants.addAll(nenes)
+	----------------------------------------
+	Contingut de llarInfants
+	----------------------------------------
+(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen), 
+(VICTOR,2,nen), (PAU,3,nen), (NEUS,0,nena), (ONA,1,nena), 
 (EVA,3,nena), (FIONA,2,nena), (ENIA,3,nena)
-
+	----------------------------------------
 	2a PART: Provant un iterador amb un bucle for per mostrar el contingut.
 
 Criatura de nom: NIL té 0 anys. Sexe: nen.
@@ -626,38 +626,32 @@ Criatura de nom: ONA té 1 anys. Sexe: nena.
 Criatura de nom: EVA té 3 anys. Sexe: nena.
 Criatura de nom: FIONA té 2 anys. Sexe: nena.
 Criatura de nom: ENIA té 3 anys. Sexe: nena.
-
 	3a PART: Fent servir un iteradoramb un bucle for per calcular edat mitjana de totes les Criatures de llarInfants.
-
 L'edat mitja és de 1.45 anys.
-
-	4a PART: Fent servir un iterador amb un bucle for per buscar una  nena de tres anys.
-Contingut de llarInfants
-----------------------------------------
-(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen),
-(VICTOR,2,nen), (PAU,3,nen), (NEUS,0,nena), (ONA,1,nena),
+	4a PART: Fent servir un iteradoramb un bucle for per buscar una  nena de tres anys.
+	Contingut de llarInfants
+	----------------------------------------
+(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen), 
+(VICTOR,2,nen), (PAU,3,nen), (NEUS,0,nena), (ONA,1,nena), 
 (EVA,3,nena), (FIONA,2,nena), (ENIA,3,nena)
-
-La nena de tres anys trobada és:
+	----------------------------------------
+La nena de tres anys trobada és: 
 Criatura de nom: EVA té 3 anys. Sexe: nena.
-
 	5a PART: Fent servir un iterador" +
 amb un bucle for per eliminar les criatures de 0 o de 3 anys.
-Contingut de llarInfants
-----------------------------------------
-(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen),
-(VICTOR,2,nen), (PAU,3,nen), (NEUS,0,nena), (ONA,1,nena),
+	Contingut de llarInfants
+	----------------------------------------
+(NIL,0,nen), (PERE,1,nen), (DÍDAC,0,nen), (NIL,1,nen), 
+(VICTOR,2,nen), (PAU,3,nen), (NEUS,0,nena), (ONA,1,nena), 
 (EVA,3,nena), (FIONA,2,nena), (ENIA,3,nena)
-
-Contingut de llarInfants
-----------------------------------------
-(PERE,1,nen), (NIL,1,nen), (VICTOR,2,nen), (ONA,1,nena),
+	----------------------------------------
+	Contingut de llarInfants
+	----------------------------------------
+(PERE,1,nen), (NIL,1,nen), (VICTOR,2,nen), (ONA,1,nena), 
 (FIONA,2,nena)
-
-    El programa 'Exemple_04_Iteracio' s'ha acabat!
-	Fins la propera !!!!!
 ```
 </details>
+
 
 
 ### [Anterior <- *README.md*](../README.md)&nbsp;&nbsp;-&nbsp;&nbsp;**Portada**&nbsp;&nbsp;-&nbsp;&nbsp; [Següent -> **_Classes_**](./02-classes.md)

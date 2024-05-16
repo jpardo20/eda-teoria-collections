@@ -12,10 +12,12 @@ public class MainaderiaList implements Mainaderia {
         this.contingut = new ArrayList();
     }
     // Mètodes
-    // Mètode matricular. Afegeix una criatura. Excepció si ja hi ha una criatura igual
-    public void matricular (Criatura criaturaADonarDAlta) throws IllegalArgumentException {
+    // Mètode matricular. Afegeix una criatura.
+    // Excepció si ja hi ha una criatura igual
+    public void matricular (Criatura criaturaADonarDAlta)
+            throws IllegalArgumentException {
         if (this.contingut.contains(criaturaADonarDAlta))
-            throw new IllegalArgumentException("Mètode matricular: criatura repetida");
+            throw new IllegalArgumentException("ERROR! Criatura repetida");
         contingut.add(criaturaADonarDAlta);
     }
 
@@ -23,7 +25,10 @@ public class MainaderiaList implements Mainaderia {
     // Retorna la criatura que és donada de baixa.
     // Si no n'hi ha cap amb aquell nom retorna null.
     public Criatura donarDeBaixa(String nomCriaturaAEsborrar) {
-        Criatura criaturaAEsborrar = new Criatura(nomCriaturaAEsborrar, Criatura.MIN_EDAT, Criatura.NEN);
+        Criatura criaturaAEsborrar = new
+                Criatura(nomCriaturaAEsborrar,
+                Criatura.MIN_EDAT,
+                Criatura.NEN);
         int index = contingut.indexOf(criaturaAEsborrar);
         if (index == -1)
             return null;
@@ -33,18 +38,23 @@ public class MainaderiaList implements Mainaderia {
     // Mètode buscar. Retorna la criatura que té el nom especificat.
     // Retorna null si no n'hi ha cap criatura amb el nom especificat.
     public Criatura buscar(String nomCriaturaABuscar) {
-        Criatura criaturaABuscar = new Criatura(nomCriaturaABuscar, Criatura.MIN_EDAT, Criatura.NEN);
+        Criatura criaturaABuscar = new
+                Criatura(nomCriaturaABuscar,
+                Criatura.MIN_EDAT,
+                Criatura.NEN);
         int indexCriaturaABuscar = contingut.indexOf(criaturaABuscar);
         if (indexCriaturaABuscar == -1)
             return null;
         else
             return (Criatura) contingut.get(indexCriaturaABuscar);
     }
-    // Mètode quantitatDeCriatures. Retorna la quantitat de criatures matriculades.
+    // Mètode quantitatDeCriatures.
+    // Retorna la quantitat de criatures matriculades.
     public int quantitatDeCriatures() {
         return contingut.size();
     }
-    // Mètode quantitatPerSexe. Retorna la quantitat de criatures del sexe rebut com a paràmetre
+    // Mètode quantitatPerSexe.
+    // Retorna la quantitat de criatures del sexe rebut com a paràmetre
     public int quantitatPerSexe(int sexe) {
         Criatura criaturaActual;
         int quantitatCriatures = 0;
@@ -56,8 +66,9 @@ public class MainaderiaList implements Mainaderia {
         }
         return quantitatCriatures;
     }
-    // Mètode get. Retorna la criatura que es troba a la posició rebuda com a paràmetre.
-    // Llença una excepció IndexOutOfBoundsException si el paràmetre està fora dels límits actuals
+    // Mètode get. Retorna la criatura que es troba a la
+    // posició rebuda com a paràmetre. I llença una excepció
+    // IndexOutOfBoundsException si el paràmetre està fora dels límits actuals
     public Criatura get(int i) throws IndexOutOfBoundsException {
         return (Criatura)contingut.get(i);
         // NOTA: get ja llença IndexOutOfBoundsException si el paràmetre està fora de limits

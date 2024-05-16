@@ -13,7 +13,8 @@ public interface Mainaderia {
     public Criatura buscar(String nom);
     // Mètode que retorna la quantitat de criatures matriculades
     public int quantitatDeCriatures();
-    // Mètode que retorna la quantitat de criatures del sexe especificat com a paràmetre
+    // Mètode que retorna la quantitat de criatures
+    // del sexe especificat com a paràmetre
     public int quantitatPerSexe(int sexe);
     // Mètode que retorna la i-èssima criatura.
     // Excepció si el paràmetre està fora dels límits actuals

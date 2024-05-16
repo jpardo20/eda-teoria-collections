@@ -58,7 +58,8 @@ public class Exemple_03_MainaderiaList {
 
         for (int i = 0; i < nomsADonarDeBaixa.length; i++) {
             nomCriatura = nomsADonarDeBaixa[i];
-            pintaComSubTitolSenseSubratllar("\n\tVolem donar de baixa a una criatura amb el nom " + nomCriatura);
+            pintaComSubTitolSenseSubratllar("\n\tVolem donar de baixa" +
+                    " a una criatura amb el nom " + nomCriatura);
             criaturaEsborrada = aparcaNens.donarDeBaixa(nomCriatura);
             System.out.println();
             if (criaturaEsborrada != null) {
