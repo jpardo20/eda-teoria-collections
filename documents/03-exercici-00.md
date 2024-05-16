@@ -49,6 +49,6 @@ public class Exercici_00 {
 }
 ```
 
-Podeu trobar el fitxer [**`Exercici_00.java`**](exercicis/Exercici_00.java).
+Podeu trobar el fitxer [**`Exercici_00.java`**](../src/exercicis/Exercici_00.java).
 
 ### [Anterior <- *README.md*](../README.md)&nbsp;&nbsp;-&nbsp;&nbsp;**Portada**&nbsp;&nbsp;-&nbsp;&nbsp; [Següent -> **_Classes_**](./02-classes.md)
