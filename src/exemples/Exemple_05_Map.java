@@ -7,12 +7,15 @@ import classes.Criatura;
 
 public class Exemple_05_Map {
 
-    public static void mostraMapCriaturaString(Map<Criatura, String> mapaCriaturaString,
-                                               String nomMapa) {
+    public static void mostraMapCriaturaString(
+            Map<Criatura, String> mapaCriaturaString,
+            String nomMapa) {
         String cadenaTitol = "\tContingut de " + nomMapa;
         System.out.println(cadenaTitol);
-        for (Map.Entry<Criatura, String> criaturaActual : mapaCriaturaString.entrySet()) {
-            System.out.print("Clau = " + criaturaActual.getKey() + "\t, " +
+        for (Map.Entry<Criatura, String> criaturaActual :
+                mapaCriaturaString.entrySet()) {
+            System.out.print("Clau = " +
+                    criaturaActual.getKey() + "\t, " +
                     "Valor = "+ criaturaActual.getValue() + "\n");
         }
         System.out.println("---------------------------------------");
