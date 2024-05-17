@@ -1,6 +1,8 @@
 package exercicis;
 
 import classes.Criatura;
+import classes.Element;
+
 import java.util.*;
 
 public class Exercici_01_apartat_C {
@@ -36,8 +38,14 @@ public static void main (String [] args) {
            darrer mètode de la interfície Iterator. */
         
         /* ... Poseu aquí la vostra solució */
-        
-        
+        Iterator it = llarInfants.iterator();
+        Criatura criaturaActual = null;
+        while (it.hasNext()) {
+            criaturaActual = (Criatura)it.next();
+            if (criaturaActual.getSexe()==Criatura.NEN) {
+                it.remove(); // CORRECTE!!! Elimina el darrer element proporcionat per next
+            }
+        }
         
         // I finalment veiem què hi ha...
         System.out.println();
