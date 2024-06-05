@@ -1,15 +1,12 @@
-package exercicis;
+package exercicis.solucions;
 
 import classes.Criatura;
-import classes.Element;
+import java.util.*;
 
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
-
-public class Exercici_01_apartat_A {
+public class Exercici_01_apartat_A_sol {
 
     public static void main (String [] args) {
+
         Criatura [] poblacio = {
                 new Criatura("NIL",0,Criatura.NEN),
                 new Criatura("EVA",1, Criatura.NENA),
@@ -22,24 +19,29 @@ public class Exercici_01_apartat_A {
                 new Criatura("ENIA",3, Criatura.NENA)
         };
 
+
         Collection lesNenes;
         lesNenes = new LinkedList();
         int quantesNenes = 0;
         
          /* APARTAT A: afegir a lesNenes totes les nenes que hi ha
-          	a la taula població. Després "dir" quantes nenes hi ha.
+          	a la taula poblacio. Després "dir" quantes nenes hi ha.
           */
 
         /* ... posseu la vostra solució a partir d'aquí */
-        for (int i = 0; i < poblacio.length; i++) {
-            if(poblacio[i].getSexe() == Criatura.NENA) {
-                lesNenes.add(poblacio[i]);
-                quantesNenes += 1;
+
+        for (Criatura criatura : poblacio) {
+            if (criatura.getSexe()==Criatura.NENA) {
+                lesNenes.add(criatura);
+                quantesNenes++;
             }
         }
 
         // mostrar el resultat
+        System.out.println("A \"lesNenes\" hi ha " +
+                quantesNenes + " nenes en total");
         System.out.println();
-        System.out.println("A \"lesNenes\" hi ha "+quantesNenes+" nenes en total");
-        System.out.println();}
+
     }
+
+}

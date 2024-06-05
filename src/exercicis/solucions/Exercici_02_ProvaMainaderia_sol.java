@@ -1,4 +1,9 @@
-package exercicis;
+/* Aquest programa de prova té molt poc valor per a determinar la
+ * presència d'errors en la implementació de la interfície Mainaderia.
+ * Més que com una prova es pot entendre com un exemple d'ús de les
+ * classes que puguin implementar la interfície. */
+
+package exercicis.solucions;
 
 import classes.Criatura;
 import classes.Mainaderia;
@@ -6,11 +11,6 @@ import classes.Mainaderia;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-/* Aquest programa de prova té molt poc valor per a determinar la
- * presència d'errors en la implementació de la interfície Mainaderia.
- * Més que com una prova es pot entendre com un exemple d'ús de les
- * classes que puguin implementar la interfície. */
 
 /* Exercici: a la versió mostrada a classe de la implementació
    d'aquest mètode, la iteració sobre el contingut no es feia
@@ -20,13 +20,13 @@ import java.util.List;
    Després, podeu executar ProvaMainaderia per veure si el resultat
    que obteniu és el mateix que s'obtenia abans */
 
-public class Exercici_02_ProvaMainaderia implements Mainaderia {
+public class Exercici_02_ProvaMainaderia_sol implements Mainaderia {
         // Atributs
         // Referència a objecte de la classe List on "guardarem" les criatures...
         private List contingut;
 
         // Constructor
-        public Exercici_02_ProvaMainaderia() {
+        public Exercici_02_ProvaMainaderia_sol() {
             // Crear la llista. Inicialment serà buida, és clar...
             this.contingut = new ArrayList();
         }
@@ -108,7 +108,7 @@ public class Exercici_02_ProvaMainaderia implements Mainaderia {
 
     public static void main(String[] args) {
         // Definició de variables
-        Exercici_02_ProvaMainaderia aparcaNens = new Exercici_02_ProvaMainaderia();
+        Exercici_02_ProvaMainaderia_sol aparcaNens = new Exercici_02_ProvaMainaderia_sol();
         // Inicialització de variables
         Criatura[] poblacioInfantil = {
                 new Criatura("NIL",0, Criatura.NEN),

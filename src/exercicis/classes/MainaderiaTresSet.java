@@ -1,4 +1,6 @@
-package classes;
+package exercicis.classes;
+
+import classes.Criatura;
 
 import java.util.*;
 

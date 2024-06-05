@@ -70,7 +70,7 @@ public class Exemple_04_Iteracio {
 		}
 		pintaPartAcabada(2);
 		pintaComSubTitolSenseSubratllar("\n\t3a PART: Fent servir un iterador" +
-				"amb un bucle for per calcular edat mitjana de totes les " +
+				" amb un bucle for per calcular edat mitjana de totes les " +
 				"Criatures de llarInfants.\n");
 		// Fer servir un iterador per calcular edat mitjana
 		double sumaEdats = 0;
@@ -78,7 +78,7 @@ public class Exemple_04_Iteracio {
 		it = llarInfants.iterator();
 		while (it.hasNext()) {
 			membre = it.next(); // membre ha estat declarat Object
-			criaturaActual = (Criatura)membre;
+			criaturaActual = (Criatura) membre;
 			sumaEdats += criaturaActual.getEdat();
 			// sumaEdats = sumaEdats+ criaturaActual.getEdat();
 		}
@@ -88,14 +88,14 @@ public class Exemple_04_Iteracio {
 		// Fer servir un iterador per buscar una nena de tres anys
 		pintaPartAcabada(3);
 		pintaComSubTitolSenseSubratllar("\n\t4a PART: Fent servir un iterador" +
-				"amb un bucle for per buscar una " +
+				" amb un bucle for per buscar una" +
 				" nena de tres anys.\n");
 		mostraListCriatures(llarInfants, "llarInfants");
 
 		boolean trobada = false;
 		it = llarInfants.iterator();
 		while (it.hasNext() && !trobada) {
-			criaturaActual = (Criatura)it.next();
+			criaturaActual = (Criatura) it.next();
 			if (criaturaActual.getSexe()== Criatura.NENA &&
 					criaturaActual.getEdat()==3)
 				trobada = true;

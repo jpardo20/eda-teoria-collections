@@ -1,11 +1,13 @@
-package exercicis;
+package exercicis.solucions;
 
 import classes.Criatura;
-import classes.Element;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Random;
 
-public class Exercici_01_apartat_C {
+public class Exercici_01_apartat_C_sol {
 
 public static void main (String [] args) {
         
@@ -38,21 +40,25 @@ public static void main (String [] args) {
            darrer mètode de la interfície Iterator. */
         
         /* ... Poseu aquí la vostra solució */
-
-        Iterator it;
-        Criatura criaturaActual;
-        it = llarInfants.iterator();
+        Iterator it = llarInfants.iterator();
+        Criatura criaturaActual = null;
         while (it.hasNext()) {
             criaturaActual = (Criatura)it.next();
-            if (criaturaActual.getSexe() == Criatura.NEN) {
+            if (criaturaActual.getSexe()==Criatura.NEN) {
                 it.remove(); // CORRECTE!!! Elimina el darrer element proporcionat per next
             }
         }
-
-        it = llarInfants.iterator();
-        while (it.hasNext()) {
-            System.out.println(it.next().toString());
-        }
+        
+        // I finalment veiem què hi ha...
+        System.out.println();
+        System.out.println("contingut de la llista després de treure els nens");
+        System.out.println("-------------------------------------------------");
+        Object [] contingut = llarInfants.toArray();
+        for (int i=0; i<contingut.length;i++) {
+            System.out.println(contingut[i]);
+        }    
+        System.out.println();
+        
     }
     
     private static void shuffle (Object [] t) {

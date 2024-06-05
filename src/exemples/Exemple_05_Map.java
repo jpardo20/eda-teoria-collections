@@ -68,7 +68,7 @@ public class Exemple_05_Map {
                 }
             }
         }
-        mostraMapCriaturaString(serveiPediatria,"serveiPediatria");
+            mostraMapCriaturaString(serveiPediatria,"serveiPediatria");
         pintaPartAcabada(1);
         pintaComSubTitolSenseSubratllar("\t2a PART: Consulta per obtenir el pediatres de cada criatura.");
         pintaExecucioComanda("\tfor (Criatura criaturaActual: poblacio) {\n" +

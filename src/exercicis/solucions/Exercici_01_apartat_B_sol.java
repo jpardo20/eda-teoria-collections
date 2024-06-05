@@ -1,9 +1,12 @@
-package exercicis;
+package exercicis.solucions;
 
 import classes.Criatura;
-import java.util.*;
 
-public class Exercici_01_apartat_B {
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Exercici_01_apartat_B_sol {
 
     public static void main(String[] args) {
 
@@ -33,15 +36,16 @@ public class Exercici_01_apartat_B {
         double sumaEdatNenes = 0; // per calcular la mitjana d'edat de les nenes
 
         /* ... poseu la vostra solució a partir d'aquí */
-        for (int i = 0; i < poblacio.length; i++) {
-            if(poblacio[i].getSexe() == Criatura.NENA) {
-                lesNenes.add(poblacio[i]);
-                sumaEdatNenes += poblacio[i].getEdat();
-            } else {
-                elsNens.add(poblacio[i]);
-                sumaEdatNens += poblacio[i].getEdat();
+        for (Criatura criaturaActual : poblacio) {
+            if (criaturaActual.getSexe()==Criatura.NENA) {
+                lesNenes.add(criaturaActual);
+                sumaEdatNenes += criaturaActual.getEdat();
+            }else {
+                elsNens.add(criaturaActual);
+                sumaEdatNens += criaturaActual.getEdat();
             }
         }
+;
 
         // donar el resultat
         System.out.println();

@@ -102,13 +102,13 @@ public class Exemple_03_MainaderiaList {
                 System.out.println(criaturaTrobada);
             }
             else
-                System.out.println("No s'ha trobat cap" +
+                System.out.println("No s'ha trobat cap " +
                         "criatura de nom " + nomCriatura);
         }
         pintaPartAcabada(3);
         // i finalment fem un recorregut per tota la mainaderia.
         pintaComSubTitolSenseSubratllar("Finalment fem un recorregut" +
-                " amb un for, per tota la mainaderia.");
+                " amb un for, per veure tota la mainaderia.");
         for (int i = 0; i<aparcaNens.quantitatDeCriatures(); i++) {
             System.out.println(aparcaNens.get(i));
         }
