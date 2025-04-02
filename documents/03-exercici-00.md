@@ -2,7 +2,7 @@
 
 ## Familiaritzar-se amb **`Collection`**
 
-### Trobareu aquest exercici en el **paquet `exercicis`**, amb el nom **`Exercici_00`**. S’utilitza la **classe `Element`**, el codi de la qual teniu en el fitxer [**`Element.java`**](./files/Element.java).
+### Trobareu aquest exercici en el **paquet `exercicis`**, amb el nom **`Exercici_00`**. S’utilitza la **classe `Element`**, el codi de la qual teniu en el fitxer [**`Element.java`**](../src/classes/Element.java).
 
 ### Heu de completar els punts que s’indica per tal de realitzar les accions que s’especifiquen.
 
