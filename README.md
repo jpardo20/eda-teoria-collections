@@ -17,6 +17,6 @@
 
 ## [Exemples](./documents/03-exemples.md)
 
-## [Exercici 1](./documents/04-exercici-01.md)
+## [Exercici 1](./documents/03-exercici-00.md)
 
 
