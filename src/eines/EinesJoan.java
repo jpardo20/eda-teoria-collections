@@ -1,6 +1,7 @@
 package eines;
 
 import classes.Criatura;
+import classes.Element;
 import classes.MainaderiaList;
 
 import java.util.LinkedList;
@@ -69,6 +70,13 @@ public class EinesJoan {
                     collecioRebuda.get(i).getSexe());
         }
         System.out.println("\t"+ liniaDecoracio);
+    }
+
+    public static void mostraElements(Element[] colElements, String nomColeccio){
+        System.out.println("\n\t" + nomColeccio);
+        for (int i = 0; i < colElements.length; i++) {
+            System.out.println(colElements[i].toString());
+        }
     }
 
     public static void mostraLinkedListCriatures(LinkedList collecioRebuda, String nomColleccio){

@@ -1,12 +1,6 @@
 package exercicis;
 
-import classes.Criatura;
 import classes.Element;
-
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Exercici_00 {
     public static void main(String[] args) {
@@ -26,7 +20,7 @@ public class Exercici_00 {
                 new Element("Gamma", 10),
                 new Element("Tau", 18),
                 new Element("Alpha", 40),
-                new Element("Ro", 23)};
+                new Element("Ro", 23) };
 
         // Crear una primera col·lecció que contingui tots
         // els elements de les posicions parelles de la taula unsElements.
@@ -48,3 +42,14 @@ public class Exercici_00 {
         /* COMPLETE */
     }
 }
+
+/*
+ * Sortida
+
+Element[Theta 15]
+Element[Ro 40]
+Element[Tau 11]
+Element[Ro 25]
+Element[Gamma 10]
+
+* * */

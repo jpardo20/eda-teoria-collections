@@ -31,15 +31,14 @@ public class Exercici_01_apartat_A {
           */
 
         /* ... posseu la vostra solució a partir d'aquí */
-        for (int i = 0; i < poblacio.length; i++) {
-            if(poblacio[i].getSexe() == Criatura.NENA) {
-                lesNenes.add(poblacio[i]);
-                quantesNenes += 1;
-            }
-        }
 
         // mostrar el resultat
         System.out.println();
         System.out.println("A \"lesNenes\" hi ha "+quantesNenes+" nenes en total");
         System.out.println();}
     }
+
+    /*
+    * Sortida
+    * A "lesNenes" hi ha 4 nenes en total
+    * */
