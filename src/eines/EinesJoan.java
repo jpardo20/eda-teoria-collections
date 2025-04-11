@@ -103,8 +103,8 @@ public class EinesJoan {
             saltaSeguentLinia = "\n";
         }
         String cadenaToString = colleccioAMostrar.toString();
-        String campsAEsborrar[] = {"[", "Criatura de nom: ", ".]"};
-        String campsRegistre[] = {" té ", " anys. Sexe: "};
+        String campsAEsborrar[] = {"[", "Criatura de nom: ", " anys. ", " any. ", ".]"};
+        String campsRegistre[] = {" té ", "Sexe: "};
         for (int i = 0; i < campsAEsborrar.length; i++) {
             cadenaToString = cadenaToString.replace(campsAEsborrar[i], "");
         }
